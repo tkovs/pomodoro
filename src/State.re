@@ -1,28 +1,61 @@
+type phase =
+  | Work
+  | Play;
+
 type state = {
   seconds: int,
-  isTicking: bool
+  isTicking: bool,
+  workTime: int,
+  playTime: int,
+  currentPhase: phase,
 };
 
 type action =
   | Start
   | Stop
   | Reset
-  | Tick;
+  | Tick
+  | TogglePhase
+  | SetTime(phase, int);
 
 let initialState = {
-  seconds: 30,
+  seconds: 25,
   isTicking: false,
+  workTime: 25,
+  playTime: 5,
+  currentPhase: Work,
 };
 
 let reducer = (state, action) =>
   switch action {
   | Start => { ...state, isTicking: true }
   | Stop => { ...state, isTicking: false }
-  | Reset => { ...state, seconds: 30 }
   | Tick =>
-    if (state.isTicking && state.seconds > 0) {
-      { ...state, seconds: state.seconds - 1 }
+    if (state.seconds > 0) {
+      if (state.isTicking) {
+        { ...state, seconds: state.seconds - 1 }
+      } else {
+        state
+      }
     } else {
-      state
+      switch state.currentPhase {
+      | Work => { ...state, currentPhase: Play, seconds: state.playTime }
+      | Play => { ...state, currentPhase: Work, seconds: state.workTime }
+      }
+    }
+  | Reset =>
+    switch (state.currentPhase) {
+    | Work => { ...state, seconds: state.workTime }
+    | Play => { ...state, seconds: state.playTime }
+    }
+  | SetTime(p, t) =>
+    switch p {
+    | Work => { ...state, workTime: t }
+    | Play => { ...state, playTime: t }
+    }
+  | TogglePhase =>
+    switch state.currentPhase {
+    | Work => { ...state, currentPhase: Play, seconds: state.playTime }
+    | Play => { ...state, currentPhase: Work, seconds: state.workTime }
     }
   };

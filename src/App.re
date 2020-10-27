@@ -9,27 +9,29 @@ let make = () => {
   });
 
   <div className="uk-container uk-flex uk-flex-center">
-    <div className="uk-card uk-card-default uk-card-body uk-width-1-3">
+    <div className="uk-card uk-card-default uk-card-body">
       <h3 className="uk-card-title uk-text-center">
         {React.string("Pomodoro")}
       </h3>
       <Timer seconds={state.seconds} />
-      <div className="uk-container">
-        <button
-          className="uk-button uk-button-primary uk-width-1-3"
-          onClick={_ => dispatch(Start)}>
-          {React.string("Start")}
-        </button>
-        <button
-          className="uk-button uk-button-danger uk-width-1-3"
-          onClick={_ => dispatch(Stop)}>
-          {React.string("Stop")}
-        </button>
-        <button
-          className="uk-button uk-button-secondary uk-width-1-3"
-          onClick={_ => dispatch(Reset)}>
-          {React.string("Reset")}
-        </button>
+      <div className="uk-grid">
+        <div className="uk-button-group">
+          <button
+            className="uk-button uk-button-primary"
+            onClick={_ => dispatch(Start)}>
+            {React.string("Start")}
+          </button>
+          <button
+            className="uk-button uk-button-danger"
+            onClick={_ => dispatch(Stop)}>
+            {React.string("Stop")}
+          </button>
+          <button
+            className="uk-button uk-button-secondary"
+            onClick={_ => dispatch(Reset)}>
+            {React.string("Reset")}
+          </button>
+        </div>
       </div>
       <div className="uk-margin-top">
         <EditPhaseTime

@@ -9,5 +9,7 @@ let formatSeconds = time => {
 
 [@react.component]
 let make = (~seconds) => {
-  <div> {React.string(formatSeconds(seconds))} </div>;
+  <div className="uk-text-center uk-text-large uk-text-bold">
+    {React.string(formatSeconds(seconds))}
+  </div>;
 };

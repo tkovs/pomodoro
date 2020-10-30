@@ -26,12 +26,15 @@ let make = () => {
       <Timer seconds={state.seconds} />
       <div className="uk-grid">
         <div className="uk-button-group">
-          <Button style=Button.StylePrimary onClick={_ => dispatch(Start)}>
-            {React.string("Start")}
-          </Button>
-          <Button style=Button.StyleDanger onClick={_ => dispatch(Stop)}>
-            {React.string("Stop")}
-          </Button>
+          {if (state.isTicking) {
+             <Button style=Button.StyleDanger onClick={_ => dispatch(Stop)}>
+               {React.string("Stop")}
+             </Button>;
+           } else {
+             <Button style=Button.StylePrimary onClick={_ => dispatch(Start)}>
+               {React.string("Start")}
+             </Button>;
+           }}
           <Button style=Button.StyleSecondary onClick={_ => dispatch(Reset)}>
             {React.string("Reset")}
           </Button>

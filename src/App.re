@@ -10,10 +10,18 @@ let make = () => {
     Some(() => Js.Global.clearInterval(timer));
   });
 
-  <div className="uk-container uk-flex uk-flex-center">
+  <div className="uk-flex uk-flex-center uk-flex-middle uk-height-viewport">
+    <div className="uk-position-top">
+      <div className="uk-container uk-container-small">
+        <h3 className="uk-text-center"> {React.string("Pomodoro")} </h3>
+      </div>
+    </div>
     <div className="uk-card uk-card-default uk-card-body">
       <h3 className="uk-card-title uk-text-center">
-        {React.string("Pomodoro")}
+        {switch (state.currentPhase) {
+         | Work => React.string("Focus")
+         | Play => React.string("Break")
+         }}
       </h3>
       <Timer seconds={state.seconds} />
       <div className="uk-grid">

@@ -1,3 +1,5 @@
+open ReasonUIKit;
+
 [@react.component]
 let make = () => {
   let (state, dispatch) =
@@ -16,21 +18,15 @@ let make = () => {
       <Timer seconds={state.seconds} />
       <div className="uk-grid">
         <div className="uk-button-group">
-          <button
-            className="uk-button uk-button-primary"
-            onClick={_ => dispatch(Start)}>
+          <Button style=Button.StylePrimary onClick={_ => dispatch(Start)}>
             {React.string("Start")}
-          </button>
-          <button
-            className="uk-button uk-button-danger"
-            onClick={_ => dispatch(Stop)}>
+          </Button>
+          <Button style=Button.StyleDanger onClick={_ => dispatch(Stop)}>
             {React.string("Stop")}
-          </button>
-          <button
-            className="uk-button uk-button-secondary"
-            onClick={_ => dispatch(Reset)}>
+          </Button>
+          <Button style=Button.StyleSecondary onClick={_ => dispatch(Reset)}>
             {React.string("Reset")}
-          </button>
+          </Button>
         </div>
       </div>
       <div className="uk-margin-top">

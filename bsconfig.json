@@ -3,10 +3,10 @@
   "reason": {
     "react-jsx": 3
   },
-  "sources": {
+  "sources": [{
     "dir": "src",
     "subdirs": true
-  },
+  }],
   "bsc-flags": [
     "-bs-super-errors",
     "-bs-no-version-header"
@@ -20,7 +20,8 @@
   "suffix": ".bs.js",
   "namespace": true,
   "bs-dependencies": [
-    "reason-react"
+    "reason-react",
+    "reason-uikit"
   ],
   "refmt": 3
 }

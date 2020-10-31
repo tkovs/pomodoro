@@ -45,8 +45,8 @@ let reducer = (state, action) =>
     }
   | Reset =>
     switch (state.currentPhase) {
-    | Work => {...state, seconds: state.workTime}
-    | Play => {...state, seconds: state.playTime}
+    | Work => {...state, seconds: state.workTime, isTicking: false}
+    | Play => {...state, seconds: state.playTime, isTicking: false}
     }
   | SetTime(p, t) =>
     switch (p) {

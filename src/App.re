@@ -24,21 +24,28 @@ let make = () => {
          }}
       </h3>
       <Timer seconds={state.seconds} />
-      <div className="uk-grid">
-        <div className="uk-button-group">
-          {if (state.isTicking) {
-             <Button style=Button.StyleDanger onClick={_ => dispatch(Stop)}>
-               {React.string("Stop")}
-             </Button>;
-           } else {
-             <Button style=Button.StylePrimary onClick={_ => dispatch(Start)}>
-               {React.string("Start")}
-             </Button>;
-           }}
-          <Button style=Button.StyleSecondary onClick={_ => dispatch(Reset)}>
-            {React.string("Reset")}
-          </Button>
-        </div>
+      <div className="button-group">
+        {if (state.isTicking) {
+           <Button style=Button.StyleDanger onClick={_ => dispatch(Stop)}>
+             <Icon icon=Icon.Ban />
+           </Button>;
+         } else {
+           <Button style=Button.StylePrimary onClick={_ => dispatch(Start)}>
+             <Icon icon=Icon.PlayCircle />
+           </Button>;
+         }}
+        {let disabled =
+           switch (state.currentPhase, state.seconds) {
+           | (Play, seconds) => seconds == state.playTime
+           | (Work, seconds) => seconds == state.workTime
+           };
+
+         <Button
+           style=Button.StyleSecondary
+           onClick={_ => dispatch(Reset)}
+           disabled>
+           <Icon icon=Icon.Refresh />
+         </Button>}
       </div>
       <div className="uk-margin-top">
         <EditPhaseTime

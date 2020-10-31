@@ -11,11 +11,7 @@ let make = () => {
   });
 
   <div className="uk-flex uk-flex-center uk-flex-middle uk-height-viewport">
-    <div className="uk-position-top">
-      <div className="uk-container uk-container-small">
-        <h3 className="uk-text-center"> {React.string("Pomodoro")} </h3>
-      </div>
-    </div>
+    <div className="uk-position-top"> <Title /> </div>
     <div className="uk-card uk-card-default uk-card-body">
       <h3 className="uk-card-title uk-text-center">
         {switch (state.currentPhase) {
@@ -47,7 +43,12 @@ let make = () => {
            <Icon icon=Icon.Refresh />
          </Button>}
       </div>
-      <div className="uk-margin-top">
+      <div className="uk-text-meta uk-text-center">
+        {let session = string_of_int(state.session);
+         let sessions = string_of_int(state.maxSessions);
+         React.string(session ++ "/" ++ sessions)}
+      </div>
+      <div>
         <EditPhaseTime
           phase="Work"
           value={state.workTime}

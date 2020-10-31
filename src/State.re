@@ -18,6 +18,7 @@ type action =
   | Reset
   | Tick
   | TogglePhase
+  | SkipTimer
   | SetTime(phase, int);
 
 let initialState = {
@@ -72,5 +73,17 @@ let reducer = (state, action) =>
     switch (state.currentPhase) {
     | Work => {...state, currentPhase: Play, seconds: state.playTime}
     | Play => {...state, currentPhase: Work, seconds: state.workTime}
+    }
+  | SkipTimer => {
+      ...state,
+      currentPhase: state.currentPhase === Play ? Work : Play,
+      seconds: state.currentPhase === Play ? state.workTime : state.playTime,
+      isTicking: false,
+      session:
+        if (state.currentPhase === Play) {
+          state.session == state.maxSessions ? 1 : state.session + 1;
+        } else {
+          state.session;
+        },
     }
   };

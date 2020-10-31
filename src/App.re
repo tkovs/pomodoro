@@ -42,6 +42,9 @@ let make = () => {
            disabled>
            <Icon icon=Icon.Refresh />
          </Button>}
+        <Button style=Button.StyleLink onClick={_ => dispatch(SkipTimer)}>
+          <Icon icon=Icon.Home />
+        </Button>
       </div>
       <div className="uk-text-meta uk-text-center">
         {let session = string_of_int(state.session);

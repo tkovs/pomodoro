@@ -20,7 +20,7 @@ let make = () => {
          }}
       </h3>
       <Timer seconds={state.seconds} />
-      <div className="button-group">
+      <div className="button-group uk-child-width-1-3">
         {if (state.isTicking) {
            <Button style=Button.StyleDanger onClick={_ => dispatch(Stop)}>
              <Icon icon=Icon.Ban />

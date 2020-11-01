@@ -25,10 +25,10 @@ let initialState = {
   currentPhase: Work,
   isTicking: false,
   maxSessions: 4,
-  playTime: 5,
-  seconds: 25,
+  playTime: 5 * 60,
+  seconds: 20 * 60,
   session: 1,
-  workTime: 25,
+  workTime: 20 * 60,
 };
 
 let reducer = (state, action) =>

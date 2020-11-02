@@ -6,10 +6,10 @@ let make = (~phase, ~value, ~onChange) =>
     </label>
     <div className="uk-form-controls">
       <input
-        value={string_of_int(value)}
+        value={string_of_int(value / 60)}
         type_="number"
         min="0"
-        onChange={e => e->ReactEvent.Form.target##value |> onChange}
+        onChange={e => e->ReactEvent.Form.target##value * 60 |> onChange}
         className="uk-input uk-border-pill"
         id={phase ++ "-input"}
         required=true

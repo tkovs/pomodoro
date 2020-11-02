@@ -6,6 +6,10 @@
   "sources": [{
     "dir": "src",
     "subdirs": true
+  },{
+    "type": "dev",
+    "dir": "__tests__",
+    "subdirs": true
   }],
   "bsc-flags": [
     "-bs-super-errors",
@@ -22,6 +26,10 @@
   "bs-dependencies": [
     "reason-react",
     "reason-uikit"
+  ],
+  "bs-dev-dependencies": [
+    "@glennsl/bs-jest",
+    "bs-react-testing-library"
   ],
   "refmt": 3
 }

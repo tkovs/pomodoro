@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Timer component with less than 60 seconds 1`] = `
+<div>
+  <h2
+    class="uk-text-center uk-heading-large"
+  >
+    00:15
+  </h2>
+</div>
+`;
+
+exports[`Timer component with more than 60 seconds 1`] = `
+<div>
+  <h2
+    class="uk-text-center uk-heading-large"
+  >
+    25:00
+  </h2>
+</div>
+`;

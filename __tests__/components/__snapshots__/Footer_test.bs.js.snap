@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component pure 1`] = `
+<div>
+  <span
+    class="uk-text-small uk-text-muted"
+  >
+    2020 Pomodoro - 
+    <a
+      href="https://github.com/tkovs/reason-pomodoro"
+    >
+      Created by tkovs 
+    </a>
+  </span>
+</div>
+`;

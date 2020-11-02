@@ -6,7 +6,7 @@
     "start": "bsb -make-world -w -ws _ ",
     "clean": "bsb -clean-world",
     "server": "moduleserve ./ --port 8001",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watchAll"
   },
   "keywords": [
     "BuckleScript",
@@ -22,7 +22,9 @@
     "reason-uikit": "^0.4.1"
   },
   "devDependencies": {
+    "@glennsl/bs-jest": "^0.6.0",
     "bs-platform": "^8.3.1",
+    "bs-react-testing-library": "^0.8.0",
     "moduleserve": "^0.9.0"
   }
 }

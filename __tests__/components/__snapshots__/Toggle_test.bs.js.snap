@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Timer component should render 1`] = `
+<div>
+  <div
+    class="uk-margin"
+  >
+    <div
+      class="uk-text-center"
+    >
+      <a
+        class="uk-link-reset uk-text-small toggle-className"
+        data-uk-toggle="target: .identifier;animation: uk-animation-fade"
+      >
+        Settings
+      </a>
+      <a
+        class="uk-link-reset uk-text-small toggle-className"
+        data-uk-toggle="target: .identifier;animation: uk-animation-fade"
+        hidden=""
+      >
+        <span
+          uk-icon="icon: arrow-left;ratio: 1;"
+        />
+        Back to app
+      </a>
+    </div>
+  </div>
+</div>
+`;

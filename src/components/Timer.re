@@ -9,7 +9,9 @@ let formatSeconds = time => {
 
 [@react.component]
 let make = (~seconds) => {
-  <h2 className="uk-text-center uk-heading-large">
-    {React.string(formatSeconds(seconds))}
-  </h2>;
+  <Spread props={"data-testid": "timer"}>
+    <h2 className="uk-text-center uk-heading-large">
+      {React.string(formatSeconds(seconds))}
+    </h2>
+  </Spread>;
 };

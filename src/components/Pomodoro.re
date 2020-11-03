@@ -37,19 +37,23 @@ let make =
          | (Work, seconds) => seconds == workTime
          };
 
-       <Button style=Button.StyleLink onClick=reset disabled>
+       <Button style=Button.StyleLink onClick=reset testId="reset" disabled>
          <Icon icon=Icon.Refresh />
        </Button>}
       {if (isTicking) {
-         <Button style=Button.StyleLink size=Button.SizeSmall onClick=stop>
+         <Button
+           style=Button.StyleLink
+           size=Button.SizeSmall
+           onClick=stop
+           testId="pause">
            <Icon icon=Icon.Nut ratio=2 />
          </Button>;
        } else {
-         <Button style=Button.StyleLink onClick=start>
+         <Button style=Button.StyleLink onClick=start testId="play">
            <Icon icon=Icon.Play ratio=2 />
          </Button>;
        }}
-      <Button style=Button.StyleLink onClick=skipTimer>
+      <Button style=Button.StyleLink onClick=skipTimer testId="jump">
         <Icon icon=Icon.ArrowRight />
       </Button>
     </div>

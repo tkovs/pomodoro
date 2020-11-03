@@ -29,7 +29,8 @@
   ],
   "bs-dev-dependencies": [
     "@glennsl/bs-jest",
-    "bs-react-testing-library"
+    "bs-react-testing-library",
+    "bs-jest-dom"
   ],
   "refmt": 3
 }

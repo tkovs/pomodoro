@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pomodoro application should render on initial state 1`] = `
+<div>
+  <div
+    class="uk-width-medium uk-padding-small"
+  >
+    <div
+      class="toggle-components"
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        <h2
+          class="uk-text-center uk-heading-large"
+          data-testid="timer"
+        >
+          20:00
+        </h2>
+        Focus
+        <div
+          class="uk-text-meta"
+        >
+          1/4
+        </div>
+      </div>
+      <div
+        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
+      >
+        <button
+          class="uk-button uk-button-link "
+          data-testid="reset"
+          disabled=""
+        >
+          <span
+            uk-icon="icon: refresh;ratio: 1;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link "
+          data-testid="play"
+        >
+          <span
+            uk-icon="icon: play;ratio: 2;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link "
+          data-testid="jump"
+        >
+          <span
+            uk-icon="icon: arrow-right;ratio: 1;"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="toggle-components"
+      hidden=""
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        Settings
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Work-input"
+        >
+          Work time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            id="Work-input"
+            min="0"
+            required=""
+            type="number"
+            value="20"
+          />
+        </div>
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Play-input"
+        >
+          Play time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            id="Play-input"
+            min="0"
+            required=""
+            type="number"
+            value="5"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="uk-margin"
+    >
+      <div
+        class="uk-text-center"
+      >
+        <a
+          class="uk-link-reset uk-text-small toggle-className"
+          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
+        >
+          Settings
+        </a>
+        <a
+          class="uk-link-reset uk-text-small toggle-className"
+          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
+          hidden=""
+        >
+          <span
+            uk-icon="icon: arrow-left;ratio: 1;"
+          />
+          Back to app
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
+  >
+    <span
+      class="uk-text-small uk-text-muted"
+    >
+      2020 Pomodoro - 
+      <a
+        href="https://github.com/tkovs/reason-pomodoro"
+      >
+        Created by tkovs 
+      </a>
+    </span>
+  </div>
+</div>
+`;

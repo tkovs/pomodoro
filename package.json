@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.6.0",
+    "bs-jest-dom": "^4.1.1",
     "bs-platform": "^8.3.1",
     "bs-react-testing-library": "^0.8.0",
     "moduleserve": "^0.9.0"

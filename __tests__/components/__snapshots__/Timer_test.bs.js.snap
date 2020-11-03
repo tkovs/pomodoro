@@ -4,6 +4,7 @@ exports[`Timer component with less than 60 seconds 1`] = `
 <div>
   <h2
     class="uk-text-center uk-heading-large"
+    data-testid="timer"
   >
     00:15
   </h2>
@@ -14,6 +15,7 @@ exports[`Timer component with more than 60 seconds 1`] = `
 <div>
   <h2
     class="uk-text-center uk-heading-large"
+    data-testid="timer"
   >
     25:00
   </h2>

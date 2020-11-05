@@ -3069,10 +3069,10 @@ reason-react@>=0.7.1:
   resolved "https://registry.yarnpkg.com/reason-react/-/reason-react-0.9.1.tgz#30a887158200b659aa03e2d75ff4cc54dc462bb0"
   integrity sha512-nlH0O2TDy9KzOLOW+vlEQk4ExHOeciyzFdoLcsmmiit6hx6H5+CVDrwJ+8aiaLT/kqK5xFOjy4PS7PftWz4plA==
 
-reason-uikit@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/reason-uikit/-/reason-uikit-0.4.1.tgz#828f247f3670ac574bb542d4d46a53b706ac3df6"
-  integrity sha512-0Ot7fsIhcXfu1GX9SRi7Blw6/BmHvFwIk4mzxtYF6mi9HWsWXe7/z63oZwiyVpR55itNi+AliH89BGKtqGYWmw==
+reason-uikit@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/reason-uikit/-/reason-uikit-0.5.0.tgz#476756971efda6d0608dd386e36d70565b8a3032"
+  integrity sha512-0LvUSTLkfMR1JDpMh0KI4zB396UV0FL/3gE2xVFHuNqHfc8f/g0oh3+G0Vf1R/0cFYFQvahf3jIKbqRtUM+2Tg==
   dependencies:
     react "^16.8.1"
     react-dom "^16.8.1"

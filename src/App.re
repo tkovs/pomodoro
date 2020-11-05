@@ -1,3 +1,5 @@
+open ReasonUIKit;
+
 [@react.component]
 let make = () => {
   let (state, dispatch) =
@@ -11,7 +13,9 @@ let make = () => {
   let toggleIdentifier = "toggle-components";
 
   <>
-    <div className="uk-width-medium uk-padding-small">
+    <Component
+      width={Some(Component.WidthMedium)}
+      padding={Some(Component.PaddingSmall)}>
       <div className=toggleIdentifier>
         <Pomodoro
           seconds={state.seconds}
@@ -36,7 +40,7 @@ let make = () => {
         />
       </div>
       <Toggle identifier=toggleIdentifier />
-    </div>
+    </Component>
     <div
       className="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index">
       <Footer />

@@ -28,7 +28,8 @@
 
 <p align="center">
   <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#information_source-how-to-use">How To Run</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#information_source-how-to-run">How To Run</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#runner-next-steps">Next Steps</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
 </p>
 
@@ -36,8 +37,10 @@
 
 This project was developed in my spare time with the following technologies:
 
--  [ReactJS](https://reactjs.org/)
--  [ReasonML](https://reasonml.github.io/)
+-  [ReactJS](https://reactjs.org)
+-  [ReasonML](https://reasonml.github.io)
+-  [Reason UIKit](https://github.com/tkovs/reason-uikit)
+-  [Testing Library](https://testing-library.com)
 
 ## :information_source: How To Use
 
@@ -58,7 +61,31 @@ $ yarn
 # Run the app on two terminals
 $ yarn start
 $ yarn server
+
+# Run the tests
+$ yarn test
+
+# Update snapshots
+$ yarn test -u
 ```
+
+## :runner: Next steps
+
+- [x] Create Reason React project
+- [x] Create state and reducer
+- [x] Implement layout desktop
+- [x] Implement layout mobile
+- [x] Handle state
+- [x] Add unit tests for timer feature
+- [x] Add unit tests for play feature
+- [ ] Add unit tests for pause feature
+- [x] Add unit tests for reset feature
+- [ ] Add unit tests for session feature
+- [ ] Add unit tests for settings feature
+- [ ] Add unit tests for reducer
+- [ ] Add cypress tests and configure GH Actions for pull requests
+- [ ] Deploy
+- [ ] Migrate html to [Reason UIKit](https://github.com/tkovs/reason-uikit)
 
 ## :memo: License
 This project is under the MIT license. See the [LICENSE](https://github.com/tkovs/reason-pomodoro/blob/master/LICENSE) for more information.

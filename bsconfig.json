@@ -15,12 +15,10 @@
     "-bs-super-errors",
     "-bs-no-version-header"
   ],
-  "package-specs": [
-    {
-      "module": "commonjs",
-      "in-source": true
-    }
-  ],
+  "package-specs": [{
+    "module": "commonjs",
+    "in-source": true
+  }],
   "suffix": ".bs.js",
   "namespace": true,
   "bs-dependencies": [
@@ -32,5 +30,14 @@
     "bs-react-testing-library",
     "bs-jest-dom"
   ],
-  "refmt": 3
+  "refmt": 3,
+  "gentypeconfig": {
+    "language": "typescript",
+    "module": "es6",
+    "importPath": "relative",
+    "debug": {
+      "all": false,
+      "basic": false
+    }
+  }
 }

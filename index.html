@@ -16,22 +16,10 @@
 
   <body class="uk-flex uk-flex-center uk-flex-middle uk-background-muted uk-height-viewport" data-uk-height-viewport>
     <div id="root"></div>
-
-    <script>
-      // stub a variable ReactJS checks. ReactJS assumes you're using a bundler, NodeJS or similar system that provides it the `process.env.NODE_ENV` variable.
-      window.process = {
-        env: {
-          NODE_ENV: 'development'
-        }
-      };
-    </script>
+    <script src="Index.js"></script>
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/js/uikit-icons.min.js"></script>
-    <!-- This is https://github.com/marijnh/moduleserve, the secret sauce that allows us not need to bundle things during development, and have instantaneous iteration feedback, without any hot-reloading or extra build pipeline needed. -->
-    <script src="/moduleserve/load.js" data-module="/src/Index.bs.js"></script>
-    <!-- Our little watcher. Super clean. Check it out! -->
-    <script src="/watcher.js"></script>
   </body>
 </html>

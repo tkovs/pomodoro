@@ -73,6 +73,7 @@ $ yarn test -u
 ## :runner: Next steps
 
 - [x] Create Reason React project
+- [ ] Config webpack and babel
 - [x] Create state and reducer
 - [x] Implement layout desktop
 - [x] Implement layout mobile

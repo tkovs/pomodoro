@@ -2,33 +2,38 @@ open ReasonUIKit;
 
 module ButtonToggle = {
   [@react.component]
-  let make = (~children, ~hidden=false, ~identifier, ~onClick) =>
+  let make = (~children, ~identifier, ~onClick, ~tooltip="", ~disabled=false) =>
     <Spread
       props={
         "data-uk-toggle":
           "target: ." ++ identifier ++ ";animation: uk-animation-fade",
-        "uk-tooltip": "",
+        "uk-tooltip": tooltip,
       }>
-      <a
-        hidden
-        className="uk-link-reset uk-text-small toggle-className"
-        onClick>
+      <button
+        className="uk-button uk-button-text toggle-className" onClick disabled>
         children
-      </a>
+      </button>
     </Spread>;
 };
 
 [@react.component]
-let make = (~identifier) => {
+let make = (~identifier, ~isReseted) => {
   let (showSettingsButton, setShowSettingsButton) =
     React.useState(() => true);
 
   let toggleActiveButton = _ => setShowSettingsButton(current => !current);
 
+  let settingsTooltip =
+    !isReseted ? "Reset the app to enable the settings button" : "";
+
   <div className="uk-margin">
     <div className="uk-text-center">
       {if (showSettingsButton) {
-         <ButtonToggle identifier onClick=toggleActiveButton>
+         <ButtonToggle
+           identifier
+           onClick=toggleActiveButton
+           tooltip=settingsTooltip
+           disabled={!isReseted}>
            {React.string("Settings")}
          </ButtonToggle>;
        } else {

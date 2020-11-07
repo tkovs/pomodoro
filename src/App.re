@@ -11,6 +11,11 @@ let make = () => {
   });
 
   let toggleIdentifier = "toggle-components";
+  let isReseted =
+    switch (state.currentPhase, state.seconds) {
+    | (Play, seconds) => seconds === state.playTime
+    | (Work, seconds) => seconds === state.workTime
+    };
 
   <>
     <Component
@@ -39,7 +44,7 @@ let make = () => {
           setPlayTime={phase => dispatch(SetTime(Play, phase))}
         />
       </div>
-      <Toggle identifier=toggleIdentifier />
+      <Toggle identifier=toggleIdentifier isReseted />
     </Component>
     <div
       className="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index">

@@ -4,7 +4,7 @@ open ReactTestingLibrary;
 
 describe("Timer component", () => {
   test("should render", () => {
-    <Toggle identifier="identifier" />
+    <Toggle identifier="identifier" isReseted=false />
     |> render
     |> container
     |> expect

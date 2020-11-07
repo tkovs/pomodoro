@@ -168,4 +168,56 @@ describe("Pomodoro application", () => {
 
     result |> container |> Expect.expect |> Expect.toMatchSnapshot;
   });
+
+  test("should pause timer after click on pause button", () => {
+    Jest.useFakeTimers();
+
+    let result = <App /> |> render;
+
+    result
+    |> getByTestId(~matcher=`Str("timer"))
+    |> expect
+    |> toHaveTextContent(`Str("20:00"))
+    |> ignore;
+
+    act(() =>
+      result
+      |> getByTestId(~matcher=`Str("play"))
+      |> FireEvent.click
+      |> ignore
+    );
+
+    act(() => Jest.advanceTimersByTime(10 * 1000));
+
+    result
+    |> getByTestId(~matcher=`Str("timer"))
+    |> expect
+    |> toHaveTextContent(`Str("19:50"))
+    |> ignore;
+
+    act(() => Jest.advanceTimersByTime(10 * 1000));
+
+    result
+    |> getByTestId(~matcher=`Str("timer"))
+    |> expect
+    |> toHaveTextContent(`Str("19:40"))
+    |> ignore;
+
+    act(() =>
+      result
+      |> getByTestId(~matcher=`Str("pause"))
+      |> FireEvent.click
+      |> ignore
+    );
+
+    act(() => Jest.advanceTimersByTime(10 * 1000));
+
+    result
+    |> getByTestId(~matcher=`Str("timer"))
+    |> expect
+    |> toHaveTextContent(`Str("19:40"))
+    |> ignore;
+
+    result |> container |> Expect.expect |> Expect.toMatchSnapshot;
+  });
 });

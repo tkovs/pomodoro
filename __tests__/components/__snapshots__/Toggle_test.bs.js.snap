@@ -8,22 +8,14 @@ exports[`Timer component should render 1`] = `
     <div
       class="uk-text-center"
     >
-      <a
-        class="uk-link-reset uk-text-small toggle-className"
+      <button
+        class="uk-button uk-button-text toggle-className"
         data-uk-toggle="target: .identifier;animation: uk-animation-fade"
+        disabled=""
+        uk-tooltip="Reset the app to enable the settings button"
       >
         Settings
-      </a>
-      <a
-        class="uk-link-reset uk-text-small toggle-className"
-        data-uk-toggle="target: .identifier;animation: uk-animation-fade"
-        hidden=""
-      >
-        <span
-          uk-icon="icon: arrow-left;ratio: 1;"
-        />
-        Back to app
-      </a>
+      </button>
     </div>
   </div>
 </div>

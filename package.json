@@ -1,7 +1,6 @@
 {
   "name": "pomodoro",
   "version": "0.9.0",
-  "private": true,
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w -ws _ ",

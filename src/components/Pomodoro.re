@@ -19,21 +19,8 @@ let make =
   <>
     <div className="uk-text-center uk-margin">
       <Timer seconds />
-      <Spread props={"data-testid": "current-phase"}>
-        <span>
-          {switch (currentPhase) {
-           | Work => React.string("Focus")
-           | Play => React.string("Break")
-           }}
-        </span>
-      </Spread>
-      <Spread props={"data-testid": "session"}>
-        <div className="uk-text-meta">
-          {let session = string_of_int(session);
-           let sessions = string_of_int(maxSessions);
-           React.string(session ++ "/" ++ sessions)}
-        </div>
-      </Spread>
+      <Phase phase=currentPhase />
+      <Session session maxSessions />
     </div>
     <div
       className="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom">

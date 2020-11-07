@@ -17,7 +17,9 @@ exports[`Pomodoro application should disable reset button after reset the pomodo
         >
           20:00
         </h2>
-        Focus
+        <span>
+          Focus
+        </span>
         <div
           class="uk-text-meta"
         >
@@ -167,7 +169,9 @@ exports[`Pomodoro application should enable reset button after the first second 
         >
           19:59
         </h2>
-        Focus
+        <span>
+          Focus
+        </span>
         <div
           class="uk-text-meta"
         >
@@ -316,7 +320,9 @@ exports[`Pomodoro application should pause timer after click on pause button 1`]
         >
           19:40
         </h2>
-        Focus
+        <span>
+          Focus
+        </span>
         <div
           class="uk-text-meta"
         >
@@ -465,7 +471,9 @@ exports[`Pomodoro application should render on initial state 1`] = `
         >
           20:00
         </h2>
-        Focus
+        <span>
+          Focus
+        </span>
         <div
           class="uk-text-meta"
         >
@@ -615,7 +623,9 @@ exports[`Pomodoro application should reset timer after click on reset button 1`]
         >
           20:00
         </h2>
-        Focus
+        <span>
+          Focus
+        </span>
         <div
           class="uk-text-meta"
         >
@@ -765,7 +775,9 @@ exports[`Pomodoro application should run timer after click on play button 1`] = 
         >
           15:00
         </h2>
-        Focus
+        <span>
+          Focus
+        </span>
         <div
           class="uk-text-meta"
         >

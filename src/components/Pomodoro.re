@@ -19,10 +19,12 @@ let make =
   <>
     <div className="uk-text-center uk-margin">
       <Timer seconds />
-      {switch (currentPhase) {
-       | Work => React.string("Focus")
-       | Play => React.string("Break")
-       }}
+      <span>
+        {switch (currentPhase) {
+         | Work => React.string("Focus")
+         | Play => React.string("Break")
+         }}
+      </span>
       <div className="uk-text-meta">
         {let session = string_of_int(session);
          let sessions = string_of_int(maxSessions);

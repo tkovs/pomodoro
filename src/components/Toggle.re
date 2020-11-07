@@ -2,10 +2,11 @@ open ReasonUIKit;
 
 module ButtonToggle = {
   [@react.component]
-  let make = (~children, ~identifier, ~onClick, ~disabled=false) => {
+  let make = (~children, ~identifier, ~onClick, ~disabled=false, ~testId) => {
     let props = {
       "data-uk-toggle":
         "target: ." ++ identifier ++ ";animation: uk-animation-fade",
+      "data-testid": testId,
     };
 
     <Spread props>
@@ -28,7 +29,10 @@ let make = (~identifier, ~isReseted, ~nonValidTime, ~onBackToApp) => {
     <div className="uk-text-center">
       {if (showSettingsButton) {
          <ButtonToggle
-           identifier onClick=toggleActiveButton disabled={!isReseted}>
+           testId="go-to-settings"
+           identifier
+           onClick=toggleActiveButton
+           disabled={!isReseted}>
            {React.string("Settings")}
          </ButtonToggle>;
        } else {
@@ -38,6 +42,7 @@ let make = (~identifier, ~isReseted, ~nonValidTime, ~onBackToApp) => {
              onBackToApp();
              toggleActiveButton();
            }}
+           testId="back-to-app"
            disabled=nonValidTime>
            <Icon icon=Icon.ArrowLeft />
            {React.string("Back to app")}

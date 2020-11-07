@@ -10,6 +10,7 @@ exports[`Timer component should render 1`] = `
     >
       <button
         class="uk-button uk-button-text toggle-className"
+        data-testid="go-to-settings"
         data-uk-toggle="target: .identifier;animation: uk-animation-fade"
         disabled=""
       >

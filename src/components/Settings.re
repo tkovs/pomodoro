@@ -8,10 +8,12 @@ let make = (~workTime, ~playTime, ~setWorkTime, ~setPlayTime) =>
       phase="Work"
       value=workTime
       onChange={e => setWorkTime(e)}
+      testId="work-time-input"
     />
     <EditPhaseTime
       phase="Play"
       value=playTime
       onChange={e => setPlayTime(e)}
+      testId="play-time-input"
     />
   </>;

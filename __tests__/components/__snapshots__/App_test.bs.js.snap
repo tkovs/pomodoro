@@ -122,7 +122,6 @@ exports[`Pomodoro application should back to first session after the last phase 
         <button
           class="uk-button uk-button-text toggle-className"
           data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-          uk-tooltip=""
         >
           Settings
         </button>
@@ -268,7 +267,6 @@ exports[`Pomodoro application should disable reset button after reset the pomodo
         <button
           class="uk-button uk-button-text toggle-className"
           data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-          uk-tooltip=""
         >
           Settings
         </button>
@@ -414,7 +412,6 @@ exports[`Pomodoro application should disable reset button after the phase ends 1
         <button
           class="uk-button uk-button-text toggle-className"
           data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-          uk-tooltip=""
         >
           Settings
         </button>
@@ -560,7 +557,6 @@ exports[`Pomodoro application should enable reset button after the first second 
           class="uk-button uk-button-text toggle-className"
           data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
           disabled=""
-          uk-tooltip="Reset the app to enable the settings button"
         >
           Settings
         </button>
@@ -706,7 +702,6 @@ exports[`Pomodoro application should go to next session after the Break phase en
         <button
           class="uk-button uk-button-text toggle-className"
           data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-          uk-tooltip=""
         >
           Settings
         </button>
@@ -852,7 +847,6 @@ exports[`Pomodoro application should jump phase after click on jump button 1`] =
         <button
           class="uk-button uk-button-text toggle-className"
           data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-          uk-tooltip=""
         >
           Settings
         </button>
@@ -998,7 +992,6 @@ exports[`Pomodoro application should pause timer after click on pause button 1`]
           class="uk-button uk-button-text toggle-className"
           data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
           disabled=""
-          uk-tooltip="Reset the app to enable the settings button"
         >
           Settings
         </button>
@@ -1144,7 +1137,6 @@ exports[`Pomodoro application should render on initial state 1`] = `
         <button
           class="uk-button uk-button-text toggle-className"
           data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-          uk-tooltip=""
         >
           Settings
         </button>
@@ -1290,7 +1282,6 @@ exports[`Pomodoro application should reset timer after click on reset button 1`]
         <button
           class="uk-button uk-button-text toggle-className"
           data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-          uk-tooltip=""
         >
           Settings
         </button>
@@ -1436,7 +1427,6 @@ exports[`Pomodoro application should run timer after click on play button 1`] = 
           class="uk-button uk-button-text toggle-className"
           data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
           disabled=""
-          uk-tooltip="Reset the app to enable the settings button"
         >
           Settings
         </button>
@@ -1582,7 +1572,6 @@ exports[`Pomodoro application should start on Focus phase, then go to Break phas
         <button
           class="uk-button uk-button-text toggle-className"
           data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-          uk-tooltip=""
         >
           Settings
         </button>

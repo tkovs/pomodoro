@@ -12,7 +12,6 @@ exports[`Timer component should render 1`] = `
         class="uk-button uk-button-text toggle-className"
         data-uk-toggle="target: .identifier;animation: uk-animation-fade"
         disabled=""
-        uk-tooltip="Reset the app to enable the settings button"
       >
         Settings
       </button>

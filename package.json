@@ -1,6 +1,7 @@
 {
   "name": "pomodoro",
   "version": "0.9.0",
+  "private": true,
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w -ws _ ",
@@ -8,7 +9,8 @@
     "test": "jest --watchAll",
     "webpack": "webpack -w",
     "webpack:production": "NODE_ENV=production webpack",
-    "server": "webpack serve"
+    "server": "webpack serve",
+    "postinstall": "husky install"
   },
   "keywords": [
     "BuckleScript",
@@ -34,6 +36,7 @@
     "bs-platform": "^8.3.1",
     "bs-react-testing-library": "^0.8.0",
     "gentype": "^3.38.0",
+    "husky": "^5.0.0-beta.0",
     "webpack-cli": "^4.2.0"
   }
 }

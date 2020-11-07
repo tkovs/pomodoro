@@ -81,10 +81,11 @@ $ yarn test -u
 - [x] Implement layout mobile
 - [x] Handle state
 - [x] Add unit tests for timer feature
-- [x] Add unit tests for play feature
-- [ ] Add unit tests for pause feature
 - [x] Add unit tests for reset feature
-- [ ] Add unit tests for session feature
+- [x] Add unit tests for play feature
+- [x] Add unit tests for pause feature
+- [x] Add unit tests for jump feature
+- [x] Add unit tests for session feature
 - [ ] Add unit tests for settings feature
 - [ ] Add unit tests for reducer
 - [ ] Add cypress tests and configure GH Actions for pull requests

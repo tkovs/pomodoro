@@ -299,6 +299,64 @@ describe("Pomodoro application", () => {
     result |> container |> Expect.expect |> Expect.toMatchSnapshot;
   });
 
+  test("should jump phase after click on jump button", () => {
+    Jest.useFakeTimers();
+
+    let result = <App /> |> render;
+
+    result
+    |> getByTestId(~matcher=`Str("session"))
+    |> expect
+    |> toHaveTextContent(`Str("1/4"))
+    |> ignore;
+
+    result
+    |> getByTestId(~matcher=`Str("current-phase"))
+    |> expect
+    |> toHaveTextContent(`Str("Focus"))
+    |> ignore;
+
+    act(() =>
+      result
+      |> getByTestId(~matcher=`Str("jump"))
+      |> FireEvent.click
+      |> ignore
+    );
+
+    result
+    |> getByTestId(~matcher=`Str("session"))
+    |> expect
+    |> toHaveTextContent(`Str("1/4"))
+    |> ignore;
+
+    result
+    |> getByTestId(~matcher=`Str("current-phase"))
+    |> expect
+    |> toHaveTextContent(`Str("Break"))
+    |> ignore;
+
+    act(() =>
+      result
+      |> getByTestId(~matcher=`Str("jump"))
+      |> FireEvent.click
+      |> ignore
+    );
+
+    result
+    |> getByTestId(~matcher=`Str("session"))
+    |> expect
+    |> toHaveTextContent(`Str("2/4"))
+    |> ignore;
+
+    result
+    |> getByTestId(~matcher=`Str("current-phase"))
+    |> expect
+    |> toHaveTextContent(`Str("Focus"))
+    |> ignore;
+
+    result |> container |> Expect.expect |> Expect.toMatchSnapshot;
+  });
+
   test("should go to next session after the Break phase ends", () => {
     Jest.useFakeTimers();
 
@@ -356,6 +414,178 @@ describe("Pomodoro application", () => {
     |> getByTestId(~matcher=`Str("session"))
     |> expect
     |> toHaveTextContent(`Str("2/4"))
+    |> ignore;
+
+    result |> container |> Expect.expect |> Expect.toMatchSnapshot;
+  });
+
+  test("should back to first session after the last phase ends", () => {
+    Jest.useFakeTimers();
+
+    let result = <App /> |> render;
+
+    result
+    |> getByTestId(~matcher=`Str("session"))
+    |> expect
+    |> toHaveTextContent(`Str("1/4"))
+    |> ignore;
+
+    result
+    |> getByTestId(~matcher=`Str("current-phase"))
+    |> expect
+    |> toHaveTextContent(`Str("Focus"))
+    |> ignore;
+
+    act(() =>
+      result
+      |> getByTestId(~matcher=`Str("jump"))
+      |> FireEvent.click
+      |> ignore
+    );
+
+    result
+    |> getByTestId(~matcher=`Str("session"))
+    |> expect
+    |> toHaveTextContent(`Str("1/4"))
+    |> ignore;
+
+    result
+    |> getByTestId(~matcher=`Str("current-phase"))
+    |> expect
+    |> toHaveTextContent(`Str("Break"))
+    |> ignore;
+
+    act(() =>
+      result
+      |> getByTestId(~matcher=`Str("jump"))
+      |> FireEvent.click
+      |> ignore
+    );
+
+    result
+    |> getByTestId(~matcher=`Str("session"))
+    |> expect
+    |> toHaveTextContent(`Str("2/4"))
+    |> ignore;
+
+    result
+    |> getByTestId(~matcher=`Str("current-phase"))
+    |> expect
+    |> toHaveTextContent(`Str("Focus"))
+    |> ignore;
+
+    act(() =>
+      result
+      |> getByTestId(~matcher=`Str("jump"))
+      |> FireEvent.click
+      |> ignore
+    );
+
+    result
+    |> getByTestId(~matcher=`Str("session"))
+    |> expect
+    |> toHaveTextContent(`Str("2/4"))
+    |> ignore;
+
+    result
+    |> getByTestId(~matcher=`Str("current-phase"))
+    |> expect
+    |> toHaveTextContent(`Str("Break"))
+    |> ignore;
+
+    act(() =>
+      result
+      |> getByTestId(~matcher=`Str("jump"))
+      |> FireEvent.click
+      |> ignore
+    );
+
+    result
+    |> getByTestId(~matcher=`Str("session"))
+    |> expect
+    |> toHaveTextContent(`Str("3/4"))
+    |> ignore;
+
+    result
+    |> getByTestId(~matcher=`Str("current-phase"))
+    |> expect
+    |> toHaveTextContent(`Str("Focus"))
+    |> ignore;
+
+    act(() =>
+      result
+      |> getByTestId(~matcher=`Str("jump"))
+      |> FireEvent.click
+      |> ignore
+    );
+
+    result
+    |> getByTestId(~matcher=`Str("session"))
+    |> expect
+    |> toHaveTextContent(`Str("3/4"))
+    |> ignore;
+
+    result
+    |> getByTestId(~matcher=`Str("current-phase"))
+    |> expect
+    |> toHaveTextContent(`Str("Break"))
+    |> ignore;
+
+    act(() =>
+      result
+      |> getByTestId(~matcher=`Str("jump"))
+      |> FireEvent.click
+      |> ignore
+    );
+
+    result
+    |> getByTestId(~matcher=`Str("session"))
+    |> expect
+    |> toHaveTextContent(`Str("4/4"))
+    |> ignore;
+
+    result
+    |> getByTestId(~matcher=`Str("current-phase"))
+    |> expect
+    |> toHaveTextContent(`Str("Focus"))
+    |> ignore;
+
+    act(() =>
+      result
+      |> getByTestId(~matcher=`Str("jump"))
+      |> FireEvent.click
+      |> ignore
+    );
+
+    result
+    |> getByTestId(~matcher=`Str("session"))
+    |> expect
+    |> toHaveTextContent(`Str("4/4"))
+    |> ignore;
+
+    result
+    |> getByTestId(~matcher=`Str("current-phase"))
+    |> expect
+    |> toHaveTextContent(`Str("Break"))
+    |> ignore;
+
+    act(() =>
+      result
+      |> getByTestId(~matcher=`Str("jump"))
+      |> FireEvent.click
+      |> ignore
+    );
+
+    result
+    |> getByTestId(~matcher=`Str("session"))
+    |> expect
+    |> toHaveTextContent(`Str("1/4"))
+    |> ignore;
+
+    result
+    |> getByTestId(~matcher=`Str("current-phase"))
+    |> expect
+    |> toHaveTextContent(`Str("Focus"))
     |> ignore;
 
     result |> container |> Expect.expect |> Expect.toMatchSnapshot;

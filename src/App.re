@@ -16,6 +16,7 @@ let make = () => {
     | (Play, seconds) => seconds === state.playTime
     | (Work, seconds) => seconds === state.workTime
     };
+  let nonValidTime = state.playTime === 0 || state.workTime === 0;
 
   <>
     <Component
@@ -40,11 +41,16 @@ let make = () => {
         <Settings
           workTime={state.workTime}
           playTime={state.playTime}
-          setWorkTime={phase => dispatch(SetTime(Work, phase))}
-          setPlayTime={phase => dispatch(SetTime(Play, phase))}
+          setWorkTime={time => dispatch(SetTime(Work, time))}
+          setPlayTime={time => dispatch(SetTime(Play, time))}
         />
       </div>
-      <Toggle identifier=toggleIdentifier isReseted />
+      <Toggle
+        identifier=toggleIdentifier
+        isReseted
+        nonValidTime
+        onBackToApp={_ => dispatch(Reset)}
+      />
     </Component>
     <div
       className="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index">

@@ -13,9 +13,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      favicon: "./favicon.ico",
       template: 'index.html',
       inject: false
-    })
+    }),
   ],
   devServer: {
     compress: true,

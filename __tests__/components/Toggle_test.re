@@ -4,7 +4,12 @@ open ReactTestingLibrary;
 
 describe("Timer component", () => {
   test("should render", () => {
-    <Toggle identifier="identifier" isReseted=false />
+    <Toggle
+      identifier="identifier"
+      isReseted=false
+      nonValidTime=false
+      onBackToApp={_ => ()}
+    />
     |> render
     |> container
     |> expect

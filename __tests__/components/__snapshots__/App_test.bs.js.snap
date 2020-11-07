@@ -148,7 +148,599 @@ exports[`Pomodoro application Initial state should render on initial state 1`] =
 </div>
 `;
 
-exports[`Pomodoro application should back to first session after the last phase ends 1`] = `
+exports[`Pomodoro application pause feature should pause timer after click on pause button 1`] = `
+<div>
+  <div
+    class=" uk-padding-small  uk-width-medium "
+  >
+    <div
+      class="toggle-components"
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        <h2
+          class="uk-text-center uk-heading-large"
+          data-testid="timer"
+        >
+          19:40
+        </h2>
+        <span
+          data-testid="current-phase"
+        >
+          Focus
+        </span>
+        <div
+          class="uk-text-meta"
+          data-testid="session"
+        >
+          1/4
+        </div>
+      </div>
+      <div
+        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
+      >
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="reset"
+        >
+          <span
+            uk-icon="icon: refresh;ratio: 1;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="play"
+        >
+          <span
+            uk-icon="icon: play;ratio: 2;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="jump"
+        >
+          <span
+            uk-icon="icon: arrow-right;ratio: 1;"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="toggle-components"
+      hidden=""
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        Settings
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Work-input"
+        >
+          Work time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="work-time-input"
+            id="Work-input"
+            min="0"
+            required=""
+            type="number"
+            value="20"
+          />
+        </div>
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Play-input"
+        >
+          Play time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="play-time-input"
+            id="Play-input"
+            min="0"
+            required=""
+            type="number"
+            value="5"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="uk-margin"
+    >
+      <div
+        class="uk-text-center"
+      >
+        <button
+          class="uk-button uk-button-text toggle-className"
+          data-testid="go-to-settings"
+          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
+          disabled=""
+        >
+          Settings
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
+  >
+    <span
+      class="uk-text-small uk-text-muted"
+    >
+      2020 Pomodoro - 
+      <a
+        href="https://github.com/tkovs/reason-pomodoro"
+      >
+        Created by tkovs 
+      </a>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Pomodoro application phase feature should jump phase after click on jump button 1`] = `
+<div>
+  <div
+    class=" uk-padding-small  uk-width-medium "
+  >
+    <div
+      class="toggle-components"
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        <h2
+          class="uk-text-center uk-heading-large"
+          data-testid="timer"
+        >
+          20:00
+        </h2>
+        <span
+          data-testid="current-phase"
+        >
+          Focus
+        </span>
+        <div
+          class="uk-text-meta"
+          data-testid="session"
+        >
+          2/4
+        </div>
+      </div>
+      <div
+        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
+      >
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="reset"
+          disabled=""
+        >
+          <span
+            uk-icon="icon: refresh;ratio: 1;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="play"
+        >
+          <span
+            uk-icon="icon: play;ratio: 2;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="jump"
+        >
+          <span
+            uk-icon="icon: arrow-right;ratio: 1;"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="toggle-components"
+      hidden=""
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        Settings
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Work-input"
+        >
+          Work time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="work-time-input"
+            id="Work-input"
+            min="0"
+            required=""
+            type="number"
+            value="20"
+          />
+        </div>
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Play-input"
+        >
+          Play time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="play-time-input"
+            id="Play-input"
+            min="0"
+            required=""
+            type="number"
+            value="5"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="uk-margin"
+    >
+      <div
+        class="uk-text-center"
+      >
+        <button
+          class="uk-button uk-button-text toggle-className"
+          data-testid="go-to-settings"
+          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
+        >
+          Settings
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
+  >
+    <span
+      class="uk-text-small uk-text-muted"
+    >
+      2020 Pomodoro - 
+      <a
+        href="https://github.com/tkovs/reason-pomodoro"
+      >
+        Created by tkovs 
+      </a>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Pomodoro application phase feature should start on Focus phase, then go to Break phase 1`] = `
+<div>
+  <div
+    class=" uk-padding-small  uk-width-medium "
+  >
+    <div
+      class="toggle-components"
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        <h2
+          class="uk-text-center uk-heading-large"
+          data-testid="timer"
+        >
+          05:00
+        </h2>
+        <span
+          data-testid="current-phase"
+        >
+          Break
+        </span>
+        <div
+          class="uk-text-meta"
+          data-testid="session"
+        >
+          1/4
+        </div>
+      </div>
+      <div
+        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
+      >
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="reset"
+          disabled=""
+        >
+          <span
+            uk-icon="icon: refresh;ratio: 1;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="play"
+        >
+          <span
+            uk-icon="icon: play;ratio: 2;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="jump"
+        >
+          <span
+            uk-icon="icon: arrow-right;ratio: 1;"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="toggle-components"
+      hidden=""
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        Settings
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Work-input"
+        >
+          Work time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="work-time-input"
+            id="Work-input"
+            min="0"
+            required=""
+            type="number"
+            value="20"
+          />
+        </div>
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Play-input"
+        >
+          Play time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="play-time-input"
+            id="Play-input"
+            min="0"
+            required=""
+            type="number"
+            value="5"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="uk-margin"
+    >
+      <div
+        class="uk-text-center"
+      >
+        <button
+          class="uk-button uk-button-text toggle-className"
+          data-testid="go-to-settings"
+          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
+        >
+          Settings
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
+  >
+    <span
+      class="uk-text-small uk-text-muted"
+    >
+      2020 Pomodoro - 
+      <a
+        href="https://github.com/tkovs/reason-pomodoro"
+      >
+        Created by tkovs 
+      </a>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Pomodoro application play feature should run timer after click on play button 1`] = `
+<div>
+  <div
+    class=" uk-padding-small  uk-width-medium "
+  >
+    <div
+      class="toggle-components"
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        <h2
+          class="uk-text-center uk-heading-large"
+          data-testid="timer"
+        >
+          15:00
+        </h2>
+        <span
+          data-testid="current-phase"
+        >
+          Focus
+        </span>
+        <div
+          class="uk-text-meta"
+          data-testid="session"
+        >
+          1/4
+        </div>
+      </div>
+      <div
+        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
+      >
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="reset"
+        >
+          <span
+            uk-icon="icon: refresh;ratio: 1;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link uk-button-small  "
+          data-testid="pause"
+        >
+          <span
+            uk-icon="icon: nut;ratio: 2;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="jump"
+        >
+          <span
+            uk-icon="icon: arrow-right;ratio: 1;"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="toggle-components"
+      hidden=""
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        Settings
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Work-input"
+        >
+          Work time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="work-time-input"
+            id="Work-input"
+            min="0"
+            required=""
+            type="number"
+            value="20"
+          />
+        </div>
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Play-input"
+        >
+          Play time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="play-time-input"
+            id="Play-input"
+            min="0"
+            required=""
+            type="number"
+            value="5"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="uk-margin"
+    >
+      <div
+        class="uk-text-center"
+      >
+        <button
+          class="uk-button uk-button-text toggle-className"
+          data-testid="go-to-settings"
+          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
+          disabled=""
+        >
+          Settings
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
+  >
+    <span
+      class="uk-text-small uk-text-muted"
+    >
+      2020 Pomodoro - 
+      <a
+        href="https://github.com/tkovs/reason-pomodoro"
+      >
+        Created by tkovs 
+      </a>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Pomodoro application reset feature should disable reset button after reset the pomodoro 1`] = `
 <div>
   <div
     class=" uk-padding-small  uk-width-medium "
@@ -296,7 +888,747 @@ exports[`Pomodoro application should back to first session after the last phase 
 </div>
 `;
 
-exports[`Pomodoro application should disable back to app button if there is some input with value 0 1`] = `
+exports[`Pomodoro application reset feature should disable reset button after the phase ends 1`] = `
+<div>
+  <div
+    class=" uk-padding-small  uk-width-medium "
+  >
+    <div
+      class="toggle-components"
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        <h2
+          class="uk-text-center uk-heading-large"
+          data-testid="timer"
+        >
+          05:00
+        </h2>
+        <span
+          data-testid="current-phase"
+        >
+          Break
+        </span>
+        <div
+          class="uk-text-meta"
+          data-testid="session"
+        >
+          1/4
+        </div>
+      </div>
+      <div
+        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
+      >
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="reset"
+          disabled=""
+        >
+          <span
+            uk-icon="icon: refresh;ratio: 1;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="play"
+        >
+          <span
+            uk-icon="icon: play;ratio: 2;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="jump"
+        >
+          <span
+            uk-icon="icon: arrow-right;ratio: 1;"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="toggle-components"
+      hidden=""
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        Settings
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Work-input"
+        >
+          Work time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="work-time-input"
+            id="Work-input"
+            min="0"
+            required=""
+            type="number"
+            value="20"
+          />
+        </div>
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Play-input"
+        >
+          Play time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="play-time-input"
+            id="Play-input"
+            min="0"
+            required=""
+            type="number"
+            value="5"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="uk-margin"
+    >
+      <div
+        class="uk-text-center"
+      >
+        <button
+          class="uk-button uk-button-text toggle-className"
+          data-testid="go-to-settings"
+          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
+        >
+          Settings
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
+  >
+    <span
+      class="uk-text-small uk-text-muted"
+    >
+      2020 Pomodoro - 
+      <a
+        href="https://github.com/tkovs/reason-pomodoro"
+      >
+        Created by tkovs 
+      </a>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Pomodoro application reset feature should enable reset button after the first second 1`] = `
+<div>
+  <div
+    class=" uk-padding-small  uk-width-medium "
+  >
+    <div
+      class="toggle-components"
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        <h2
+          class="uk-text-center uk-heading-large"
+          data-testid="timer"
+        >
+          19:59
+        </h2>
+        <span
+          data-testid="current-phase"
+        >
+          Focus
+        </span>
+        <div
+          class="uk-text-meta"
+          data-testid="session"
+        >
+          1/4
+        </div>
+      </div>
+      <div
+        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
+      >
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="reset"
+        >
+          <span
+            uk-icon="icon: refresh;ratio: 1;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link uk-button-small  "
+          data-testid="pause"
+        >
+          <span
+            uk-icon="icon: nut;ratio: 2;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="jump"
+        >
+          <span
+            uk-icon="icon: arrow-right;ratio: 1;"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="toggle-components"
+      hidden=""
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        Settings
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Work-input"
+        >
+          Work time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="work-time-input"
+            id="Work-input"
+            min="0"
+            required=""
+            type="number"
+            value="20"
+          />
+        </div>
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Play-input"
+        >
+          Play time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="play-time-input"
+            id="Play-input"
+            min="0"
+            required=""
+            type="number"
+            value="5"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="uk-margin"
+    >
+      <div
+        class="uk-text-center"
+      >
+        <button
+          class="uk-button uk-button-text toggle-className"
+          data-testid="go-to-settings"
+          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
+          disabled=""
+        >
+          Settings
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
+  >
+    <span
+      class="uk-text-small uk-text-muted"
+    >
+      2020 Pomodoro - 
+      <a
+        href="https://github.com/tkovs/reason-pomodoro"
+      >
+        Created by tkovs 
+      </a>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Pomodoro application reset feature should reset timer after click on reset button 1`] = `
+<div>
+  <div
+    class=" uk-padding-small  uk-width-medium "
+  >
+    <div
+      class="toggle-components"
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        <h2
+          class="uk-text-center uk-heading-large"
+          data-testid="timer"
+        >
+          20:00
+        </h2>
+        <span
+          data-testid="current-phase"
+        >
+          Focus
+        </span>
+        <div
+          class="uk-text-meta"
+          data-testid="session"
+        >
+          1/4
+        </div>
+      </div>
+      <div
+        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
+      >
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="reset"
+          disabled=""
+        >
+          <span
+            uk-icon="icon: refresh;ratio: 1;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="play"
+        >
+          <span
+            uk-icon="icon: play;ratio: 2;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="jump"
+        >
+          <span
+            uk-icon="icon: arrow-right;ratio: 1;"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="toggle-components"
+      hidden=""
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        Settings
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Work-input"
+        >
+          Work time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="work-time-input"
+            id="Work-input"
+            min="0"
+            required=""
+            type="number"
+            value="20"
+          />
+        </div>
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Play-input"
+        >
+          Play time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="play-time-input"
+            id="Play-input"
+            min="0"
+            required=""
+            type="number"
+            value="5"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="uk-margin"
+    >
+      <div
+        class="uk-text-center"
+      >
+        <button
+          class="uk-button uk-button-text toggle-className"
+          data-testid="go-to-settings"
+          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
+        >
+          Settings
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
+  >
+    <span
+      class="uk-text-small uk-text-muted"
+    >
+      2020 Pomodoro - 
+      <a
+        href="https://github.com/tkovs/reason-pomodoro"
+      >
+        Created by tkovs 
+      </a>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Pomodoro application session feature should back to first session after the last phase ends 1`] = `
+<div>
+  <div
+    class=" uk-padding-small  uk-width-medium "
+  >
+    <div
+      class="toggle-components"
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        <h2
+          class="uk-text-center uk-heading-large"
+          data-testid="timer"
+        >
+          20:00
+        </h2>
+        <span
+          data-testid="current-phase"
+        >
+          Focus
+        </span>
+        <div
+          class="uk-text-meta"
+          data-testid="session"
+        >
+          1/4
+        </div>
+      </div>
+      <div
+        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
+      >
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="reset"
+          disabled=""
+        >
+          <span
+            uk-icon="icon: refresh;ratio: 1;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="play"
+        >
+          <span
+            uk-icon="icon: play;ratio: 2;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="jump"
+        >
+          <span
+            uk-icon="icon: arrow-right;ratio: 1;"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="toggle-components"
+      hidden=""
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        Settings
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Work-input"
+        >
+          Work time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="work-time-input"
+            id="Work-input"
+            min="0"
+            required=""
+            type="number"
+            value="20"
+          />
+        </div>
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Play-input"
+        >
+          Play time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="play-time-input"
+            id="Play-input"
+            min="0"
+            required=""
+            type="number"
+            value="5"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="uk-margin"
+    >
+      <div
+        class="uk-text-center"
+      >
+        <button
+          class="uk-button uk-button-text toggle-className"
+          data-testid="go-to-settings"
+          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
+        >
+          Settings
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
+  >
+    <span
+      class="uk-text-small uk-text-muted"
+    >
+      2020 Pomodoro - 
+      <a
+        href="https://github.com/tkovs/reason-pomodoro"
+      >
+        Created by tkovs 
+      </a>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Pomodoro application session feature should go to next session after the Break phase ends 1`] = `
+<div>
+  <div
+    class=" uk-padding-small  uk-width-medium "
+  >
+    <div
+      class="toggle-components"
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        <h2
+          class="uk-text-center uk-heading-large"
+          data-testid="timer"
+        >
+          20:00
+        </h2>
+        <span
+          data-testid="current-phase"
+        >
+          Focus
+        </span>
+        <div
+          class="uk-text-meta"
+          data-testid="session"
+        >
+          2/4
+        </div>
+      </div>
+      <div
+        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
+      >
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="reset"
+          disabled=""
+        >
+          <span
+            uk-icon="icon: refresh;ratio: 1;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="play"
+        >
+          <span
+            uk-icon="icon: play;ratio: 2;"
+          />
+        </button>
+        <button
+          class="uk-button uk-button-link   "
+          data-testid="jump"
+        >
+          <span
+            uk-icon="icon: arrow-right;ratio: 1;"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="toggle-components"
+      hidden=""
+    >
+      <div
+        class="uk-text-center uk-margin"
+      >
+        Settings
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Work-input"
+        >
+          Work time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="work-time-input"
+            id="Work-input"
+            min="0"
+            required=""
+            type="number"
+            value="20"
+          />
+        </div>
+      </div>
+      <div
+        class="uk-form-stacked uk-margin-small"
+      >
+        <label
+          class="uk-form-label"
+          for="Play-input"
+        >
+          Play time: 
+        </label>
+        <div
+          class="uk-form-controls"
+        >
+          <input
+            class="uk-input uk-border-pill"
+            data-testid="play-time-input"
+            id="Play-input"
+            min="0"
+            required=""
+            type="number"
+            value="5"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="uk-margin"
+    >
+      <div
+        class="uk-text-center"
+      >
+        <button
+          class="uk-button uk-button-text toggle-className"
+          data-testid="go-to-settings"
+          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
+        >
+          Settings
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
+  >
+    <span
+      class="uk-text-small uk-text-muted"
+    >
+      2020 Pomodoro - 
+      <a
+        href="https://github.com/tkovs/reason-pomodoro"
+      >
+        Created by tkovs 
+      </a>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Pomodoro application settings feature should disable back to app button if there is some input with value 0 1`] = `
 <div>
   <div
     class=" uk-padding-small  uk-width-medium "
@@ -447,7 +1779,7 @@ exports[`Pomodoro application should disable back to app button if there is some
 </div>
 `;
 
-exports[`Pomodoro application should disable go to settings button if the app is not reseted 1`] = `
+exports[`Pomodoro application settings feature should disable go to settings button if the app is not reseted 1`] = `
 <div>
   <div
     class=" uk-padding-small  uk-width-medium "
@@ -595,1339 +1927,7 @@ exports[`Pomodoro application should disable go to settings button if the app is
 </div>
 `;
 
-exports[`Pomodoro application should disable reset button after reset the pomodoro 1`] = `
-<div>
-  <div
-    class=" uk-padding-small  uk-width-medium "
-  >
-    <div
-      class="toggle-components"
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        <h2
-          class="uk-text-center uk-heading-large"
-          data-testid="timer"
-        >
-          20:00
-        </h2>
-        <span
-          data-testid="current-phase"
-        >
-          Focus
-        </span>
-        <div
-          class="uk-text-meta"
-          data-testid="session"
-        >
-          1/4
-        </div>
-      </div>
-      <div
-        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
-      >
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="reset"
-          disabled=""
-        >
-          <span
-            uk-icon="icon: refresh;ratio: 1;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="play"
-        >
-          <span
-            uk-icon="icon: play;ratio: 2;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="jump"
-        >
-          <span
-            uk-icon="icon: arrow-right;ratio: 1;"
-          />
-        </button>
-      </div>
-    </div>
-    <div
-      class="toggle-components"
-      hidden=""
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        Settings
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Work-input"
-        >
-          Work time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="work-time-input"
-            id="Work-input"
-            min="0"
-            required=""
-            type="number"
-            value="20"
-          />
-        </div>
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Play-input"
-        >
-          Play time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="play-time-input"
-            id="Play-input"
-            min="0"
-            required=""
-            type="number"
-            value="5"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="uk-margin"
-    >
-      <div
-        class="uk-text-center"
-      >
-        <button
-          class="uk-button uk-button-text toggle-className"
-          data-testid="go-to-settings"
-          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-        >
-          Settings
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
-  >
-    <span
-      class="uk-text-small uk-text-muted"
-    >
-      2020 Pomodoro - 
-      <a
-        href="https://github.com/tkovs/reason-pomodoro"
-      >
-        Created by tkovs 
-      </a>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Pomodoro application should disable reset button after the phase ends 1`] = `
-<div>
-  <div
-    class=" uk-padding-small  uk-width-medium "
-  >
-    <div
-      class="toggle-components"
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        <h2
-          class="uk-text-center uk-heading-large"
-          data-testid="timer"
-        >
-          05:00
-        </h2>
-        <span
-          data-testid="current-phase"
-        >
-          Break
-        </span>
-        <div
-          class="uk-text-meta"
-          data-testid="session"
-        >
-          1/4
-        </div>
-      </div>
-      <div
-        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
-      >
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="reset"
-          disabled=""
-        >
-          <span
-            uk-icon="icon: refresh;ratio: 1;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="play"
-        >
-          <span
-            uk-icon="icon: play;ratio: 2;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="jump"
-        >
-          <span
-            uk-icon="icon: arrow-right;ratio: 1;"
-          />
-        </button>
-      </div>
-    </div>
-    <div
-      class="toggle-components"
-      hidden=""
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        Settings
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Work-input"
-        >
-          Work time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="work-time-input"
-            id="Work-input"
-            min="0"
-            required=""
-            type="number"
-            value="20"
-          />
-        </div>
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Play-input"
-        >
-          Play time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="play-time-input"
-            id="Play-input"
-            min="0"
-            required=""
-            type="number"
-            value="5"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="uk-margin"
-    >
-      <div
-        class="uk-text-center"
-      >
-        <button
-          class="uk-button uk-button-text toggle-className"
-          data-testid="go-to-settings"
-          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-        >
-          Settings
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
-  >
-    <span
-      class="uk-text-small uk-text-muted"
-    >
-      2020 Pomodoro - 
-      <a
-        href="https://github.com/tkovs/reason-pomodoro"
-      >
-        Created by tkovs 
-      </a>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Pomodoro application should enable reset button after the first second 1`] = `
-<div>
-  <div
-    class=" uk-padding-small  uk-width-medium "
-  >
-    <div
-      class="toggle-components"
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        <h2
-          class="uk-text-center uk-heading-large"
-          data-testid="timer"
-        >
-          19:59
-        </h2>
-        <span
-          data-testid="current-phase"
-        >
-          Focus
-        </span>
-        <div
-          class="uk-text-meta"
-          data-testid="session"
-        >
-          1/4
-        </div>
-      </div>
-      <div
-        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
-      >
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="reset"
-        >
-          <span
-            uk-icon="icon: refresh;ratio: 1;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link uk-button-small  "
-          data-testid="pause"
-        >
-          <span
-            uk-icon="icon: nut;ratio: 2;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="jump"
-        >
-          <span
-            uk-icon="icon: arrow-right;ratio: 1;"
-          />
-        </button>
-      </div>
-    </div>
-    <div
-      class="toggle-components"
-      hidden=""
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        Settings
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Work-input"
-        >
-          Work time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="work-time-input"
-            id="Work-input"
-            min="0"
-            required=""
-            type="number"
-            value="20"
-          />
-        </div>
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Play-input"
-        >
-          Play time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="play-time-input"
-            id="Play-input"
-            min="0"
-            required=""
-            type="number"
-            value="5"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="uk-margin"
-    >
-      <div
-        class="uk-text-center"
-      >
-        <button
-          class="uk-button uk-button-text toggle-className"
-          data-testid="go-to-settings"
-          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-          disabled=""
-        >
-          Settings
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
-  >
-    <span
-      class="uk-text-small uk-text-muted"
-    >
-      2020 Pomodoro - 
-      <a
-        href="https://github.com/tkovs/reason-pomodoro"
-      >
-        Created by tkovs 
-      </a>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Pomodoro application should go to next session after the Break phase ends 1`] = `
-<div>
-  <div
-    class=" uk-padding-small  uk-width-medium "
-  >
-    <div
-      class="toggle-components"
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        <h2
-          class="uk-text-center uk-heading-large"
-          data-testid="timer"
-        >
-          20:00
-        </h2>
-        <span
-          data-testid="current-phase"
-        >
-          Focus
-        </span>
-        <div
-          class="uk-text-meta"
-          data-testid="session"
-        >
-          2/4
-        </div>
-      </div>
-      <div
-        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
-      >
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="reset"
-          disabled=""
-        >
-          <span
-            uk-icon="icon: refresh;ratio: 1;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="play"
-        >
-          <span
-            uk-icon="icon: play;ratio: 2;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="jump"
-        >
-          <span
-            uk-icon="icon: arrow-right;ratio: 1;"
-          />
-        </button>
-      </div>
-    </div>
-    <div
-      class="toggle-components"
-      hidden=""
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        Settings
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Work-input"
-        >
-          Work time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="work-time-input"
-            id="Work-input"
-            min="0"
-            required=""
-            type="number"
-            value="20"
-          />
-        </div>
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Play-input"
-        >
-          Play time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="play-time-input"
-            id="Play-input"
-            min="0"
-            required=""
-            type="number"
-            value="5"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="uk-margin"
-    >
-      <div
-        class="uk-text-center"
-      >
-        <button
-          class="uk-button uk-button-text toggle-className"
-          data-testid="go-to-settings"
-          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-        >
-          Settings
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
-  >
-    <span
-      class="uk-text-small uk-text-muted"
-    >
-      2020 Pomodoro - 
-      <a
-        href="https://github.com/tkovs/reason-pomodoro"
-      >
-        Created by tkovs 
-      </a>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Pomodoro application should jump phase after click on jump button 1`] = `
-<div>
-  <div
-    class=" uk-padding-small  uk-width-medium "
-  >
-    <div
-      class="toggle-components"
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        <h2
-          class="uk-text-center uk-heading-large"
-          data-testid="timer"
-        >
-          20:00
-        </h2>
-        <span
-          data-testid="current-phase"
-        >
-          Focus
-        </span>
-        <div
-          class="uk-text-meta"
-          data-testid="session"
-        >
-          2/4
-        </div>
-      </div>
-      <div
-        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
-      >
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="reset"
-          disabled=""
-        >
-          <span
-            uk-icon="icon: refresh;ratio: 1;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="play"
-        >
-          <span
-            uk-icon="icon: play;ratio: 2;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="jump"
-        >
-          <span
-            uk-icon="icon: arrow-right;ratio: 1;"
-          />
-        </button>
-      </div>
-    </div>
-    <div
-      class="toggle-components"
-      hidden=""
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        Settings
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Work-input"
-        >
-          Work time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="work-time-input"
-            id="Work-input"
-            min="0"
-            required=""
-            type="number"
-            value="20"
-          />
-        </div>
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Play-input"
-        >
-          Play time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="play-time-input"
-            id="Play-input"
-            min="0"
-            required=""
-            type="number"
-            value="5"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="uk-margin"
-    >
-      <div
-        class="uk-text-center"
-      >
-        <button
-          class="uk-button uk-button-text toggle-className"
-          data-testid="go-to-settings"
-          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-        >
-          Settings
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
-  >
-    <span
-      class="uk-text-small uk-text-muted"
-    >
-      2020 Pomodoro - 
-      <a
-        href="https://github.com/tkovs/reason-pomodoro"
-      >
-        Created by tkovs 
-      </a>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Pomodoro application should pause timer after click on pause button 1`] = `
-<div>
-  <div
-    class=" uk-padding-small  uk-width-medium "
-  >
-    <div
-      class="toggle-components"
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        <h2
-          class="uk-text-center uk-heading-large"
-          data-testid="timer"
-        >
-          19:40
-        </h2>
-        <span
-          data-testid="current-phase"
-        >
-          Focus
-        </span>
-        <div
-          class="uk-text-meta"
-          data-testid="session"
-        >
-          1/4
-        </div>
-      </div>
-      <div
-        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
-      >
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="reset"
-        >
-          <span
-            uk-icon="icon: refresh;ratio: 1;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="play"
-        >
-          <span
-            uk-icon="icon: play;ratio: 2;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="jump"
-        >
-          <span
-            uk-icon="icon: arrow-right;ratio: 1;"
-          />
-        </button>
-      </div>
-    </div>
-    <div
-      class="toggle-components"
-      hidden=""
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        Settings
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Work-input"
-        >
-          Work time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="work-time-input"
-            id="Work-input"
-            min="0"
-            required=""
-            type="number"
-            value="20"
-          />
-        </div>
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Play-input"
-        >
-          Play time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="play-time-input"
-            id="Play-input"
-            min="0"
-            required=""
-            type="number"
-            value="5"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="uk-margin"
-    >
-      <div
-        class="uk-text-center"
-      >
-        <button
-          class="uk-button uk-button-text toggle-className"
-          data-testid="go-to-settings"
-          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-          disabled=""
-        >
-          Settings
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
-  >
-    <span
-      class="uk-text-small uk-text-muted"
-    >
-      2020 Pomodoro - 
-      <a
-        href="https://github.com/tkovs/reason-pomodoro"
-      >
-        Created by tkovs 
-      </a>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Pomodoro application should reset timer after click on reset button 1`] = `
-<div>
-  <div
-    class=" uk-padding-small  uk-width-medium "
-  >
-    <div
-      class="toggle-components"
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        <h2
-          class="uk-text-center uk-heading-large"
-          data-testid="timer"
-        >
-          20:00
-        </h2>
-        <span
-          data-testid="current-phase"
-        >
-          Focus
-        </span>
-        <div
-          class="uk-text-meta"
-          data-testid="session"
-        >
-          1/4
-        </div>
-      </div>
-      <div
-        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
-      >
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="reset"
-          disabled=""
-        >
-          <span
-            uk-icon="icon: refresh;ratio: 1;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="play"
-        >
-          <span
-            uk-icon="icon: play;ratio: 2;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="jump"
-        >
-          <span
-            uk-icon="icon: arrow-right;ratio: 1;"
-          />
-        </button>
-      </div>
-    </div>
-    <div
-      class="toggle-components"
-      hidden=""
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        Settings
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Work-input"
-        >
-          Work time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="work-time-input"
-            id="Work-input"
-            min="0"
-            required=""
-            type="number"
-            value="20"
-          />
-        </div>
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Play-input"
-        >
-          Play time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="play-time-input"
-            id="Play-input"
-            min="0"
-            required=""
-            type="number"
-            value="5"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="uk-margin"
-    >
-      <div
-        class="uk-text-center"
-      >
-        <button
-          class="uk-button uk-button-text toggle-className"
-          data-testid="go-to-settings"
-          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-        >
-          Settings
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
-  >
-    <span
-      class="uk-text-small uk-text-muted"
-    >
-      2020 Pomodoro - 
-      <a
-        href="https://github.com/tkovs/reason-pomodoro"
-      >
-        Created by tkovs 
-      </a>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Pomodoro application should run timer after click on play button 1`] = `
-<div>
-  <div
-    class=" uk-padding-small  uk-width-medium "
-  >
-    <div
-      class="toggle-components"
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        <h2
-          class="uk-text-center uk-heading-large"
-          data-testid="timer"
-        >
-          15:00
-        </h2>
-        <span
-          data-testid="current-phase"
-        >
-          Focus
-        </span>
-        <div
-          class="uk-text-meta"
-          data-testid="session"
-        >
-          1/4
-        </div>
-      </div>
-      <div
-        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
-      >
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="reset"
-        >
-          <span
-            uk-icon="icon: refresh;ratio: 1;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link uk-button-small  "
-          data-testid="pause"
-        >
-          <span
-            uk-icon="icon: nut;ratio: 2;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="jump"
-        >
-          <span
-            uk-icon="icon: arrow-right;ratio: 1;"
-          />
-        </button>
-      </div>
-    </div>
-    <div
-      class="toggle-components"
-      hidden=""
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        Settings
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Work-input"
-        >
-          Work time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="work-time-input"
-            id="Work-input"
-            min="0"
-            required=""
-            type="number"
-            value="20"
-          />
-        </div>
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Play-input"
-        >
-          Play time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="play-time-input"
-            id="Play-input"
-            min="0"
-            required=""
-            type="number"
-            value="5"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="uk-margin"
-    >
-      <div
-        class="uk-text-center"
-      >
-        <button
-          class="uk-button uk-button-text toggle-className"
-          data-testid="go-to-settings"
-          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-          disabled=""
-        >
-          Settings
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
-  >
-    <span
-      class="uk-text-small uk-text-muted"
-    >
-      2020 Pomodoro - 
-      <a
-        href="https://github.com/tkovs/reason-pomodoro"
-      >
-        Created by tkovs 
-      </a>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Pomodoro application should start on Focus phase, then go to Break phase 1`] = `
-<div>
-  <div
-    class=" uk-padding-small  uk-width-medium "
-  >
-    <div
-      class="toggle-components"
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        <h2
-          class="uk-text-center uk-heading-large"
-          data-testid="timer"
-        >
-          05:00
-        </h2>
-        <span
-          data-testid="current-phase"
-        >
-          Break
-        </span>
-        <div
-          class="uk-text-meta"
-          data-testid="session"
-        >
-          1/4
-        </div>
-      </div>
-      <div
-        class="uk-child-width-1-3 uk-padding-large uk-padding-remove-top uk-padding-remove-bottom"
-      >
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="reset"
-          disabled=""
-        >
-          <span
-            uk-icon="icon: refresh;ratio: 1;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="play"
-        >
-          <span
-            uk-icon="icon: play;ratio: 2;"
-          />
-        </button>
-        <button
-          class="uk-button uk-button-link   "
-          data-testid="jump"
-        >
-          <span
-            uk-icon="icon: arrow-right;ratio: 1;"
-          />
-        </button>
-      </div>
-    </div>
-    <div
-      class="toggle-components"
-      hidden=""
-    >
-      <div
-        class="uk-text-center uk-margin"
-      >
-        Settings
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Work-input"
-        >
-          Work time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="work-time-input"
-            id="Work-input"
-            min="0"
-            required=""
-            type="number"
-            value="20"
-          />
-        </div>
-      </div>
-      <div
-        class="uk-form-stacked uk-margin-small"
-      >
-        <label
-          class="uk-form-label"
-          for="Play-input"
-        >
-          Play time: 
-        </label>
-        <div
-          class="uk-form-controls"
-        >
-          <input
-            class="uk-input uk-border-pill"
-            data-testid="play-time-input"
-            id="Play-input"
-            min="0"
-            required=""
-            type="number"
-            value="5"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="uk-margin"
-    >
-      <div
-        class="uk-text-center"
-      >
-        <button
-          class="uk-button uk-button-text toggle-className"
-          data-testid="go-to-settings"
-          data-uk-toggle="target: .toggle-components;animation: uk-animation-fade"
-        >
-          Settings
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index"
-  >
-    <span
-      class="uk-text-small uk-text-muted"
-    >
-      2020 Pomodoro - 
-      <a
-        href="https://github.com/tkovs/reason-pomodoro"
-      >
-        Created by tkovs 
-      </a>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Pomodoro application should update focus time and break time after change the values on settings 1`] = `
+exports[`Pomodoro application settings feature should update focus time and break time after change the values on settings 1`] = `
 <div>
   <div
     class=" uk-padding-small  uk-width-medium "

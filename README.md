@@ -89,7 +89,7 @@ $ yarn test -u
 - [ ] Add unit tests for settings feature
 - [ ] Add unit tests for reducer
 - [ ] Add cypress tests and configure GH Actions for pull requests
-- [ ] Deploy
+- [x] [Deploy](http://pomodoro.tkovs.com)
 - [ ] Migrate html to [Reason UIKit](https://github.com/tkovs/reason-uikit)
 
 ## :camera: Screenshots

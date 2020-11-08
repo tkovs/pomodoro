@@ -38,7 +38,7 @@
 
 ## :rocket: Technologies
 
-This project was developed in my spare time with the following technologies:
+This project was developed with the following technologies:
 
 -  [ReactJS](https://reactjs.org)
 -  [ReasonML](https://reasonml.github.io)

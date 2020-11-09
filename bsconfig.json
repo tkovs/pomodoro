@@ -39,5 +39,8 @@
       "all": false,
       "basic": false
     }
+  },
+  "warnings": {
+    "number": "-48"
   }
 }

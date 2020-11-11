@@ -42,10 +42,10 @@
 
 This project was developed with the following technologies:
 
--  [ReactJS](https://reactjs.org)
--  [ReasonML](https://reasonml.github.io)
--  [Reason UIKit](https://github.com/tkovs/reason-uikit)
--  [Testing Library](https://testing-library.com)
+- [ReactJS](https://reactjs.org)
+- [ReasonML](https://reasonml.github.io)
+- [Reason UIKit](https://github.com/tkovs/reason-uikit)
+- [Testing Library](https://testing-library.com)
 
 ## :information_source: How To Run
 
@@ -89,7 +89,7 @@ $ yarn test -u
 - [x] Add unit tests for jump feature
 - [x] Add unit tests for session feature
 - [x] Add unit tests for settings feature
-- [ ] Add unit tests for reducer
+- [x] Add unit tests for reducer
 - [ ] Add cypress tests and configure GH Actions for pull requests
 - [x] [Deploy](http://pomodoro.tkovs.com)
 - [ ] Migrate html to [Reason UIKit](https://github.com/tkovs/reason-uikit)
@@ -97,13 +97,15 @@ $ yarn test -u
 ## :camera: Screenshots
 
 ### Pomodoro
+
 ![image](https://user-images.githubusercontent.com/8717661/98301198-266bfa00-1f99-11eb-83b8-f11ec4efa93d.png)
 
 ### Settings
+
 ![image](https://user-images.githubusercontent.com/8717661/98301628-d5103a80-1f99-11eb-8ecd-cfe2a4418082.png)
 
-
 ## :memo: License
+
 This project is under the MIT license. See the [LICENSE](https://github.com/tkovs/reason-pomodoro/blob/master/LICENSE) for more information.
 
 ---

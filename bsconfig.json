@@ -3,32 +3,32 @@
   "reason": {
     "react-jsx": 3
   },
-  "sources": [{
-    "dir": "src",
-    "subdirs": true
-  },{
-    "type": "dev",
-    "dir": "__tests__",
-    "subdirs": true
-  }],
-  "bsc-flags": [
-    "-bs-super-errors",
-    "-bs-no-version-header"
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    },
+    {
+      "type": "dev",
+      "dir": "__tests__",
+      "subdirs": true
+    }
   ],
-  "package-specs": [{
-    "module": "commonjs",
-    "in-source": true
-  }],
+  "bsc-flags": ["-bs-super-errors", "-bs-no-version-header"],
+  "package-specs": [
+    {
+      "module": "commonjs",
+      "in-source": true
+    }
+  ],
   "suffix": ".bs.js",
   "namespace": true,
-  "bs-dependencies": [
-    "reason-react",
-    "reason-uikit"
-  ],
+  "bs-dependencies": ["reason-react", "reason-uikit"],
   "bs-dev-dependencies": [
     "@glennsl/bs-jest",
     "bs-react-testing-library",
-    "bs-jest-dom"
+    "bs-jest-dom",
+    "reason-hooks-testing-library"
   ],
   "refmt": 3,
   "gentypeconfig": {

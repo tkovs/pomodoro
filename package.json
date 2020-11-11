@@ -37,6 +37,7 @@
     "bs-react-testing-library": "^0.8.0",
     "gentype": "^3.38.0",
     "husky": "^5.0.0-beta.0",
+    "reason-hooks-testing-library": "^0.2.1",
     "webpack-cli": "^4.2.0"
   }
 }

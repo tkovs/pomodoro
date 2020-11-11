@@ -2,6 +2,8 @@ type phase =
   | Work
   | Play;
 
+type last;
+
 type state = {
   currentPhase: phase,
   isTicking: bool,
@@ -17,18 +19,17 @@ type action =
   | Stop
   | Reset
   | Tick
-  | TogglePhase
   | SkipTimer
   | SetTime(phase, int);
 
 let initialState = {
-  currentPhase: Work,
   isTicking: false,
-  maxSessions: 4,
-  playTime: 5 * 60,
+  currentPhase: Work,
   seconds: 20 * 60,
-  session: 1,
+  playTime: 5 * 60,
   workTime: 20 * 60,
+  session: 1,
+  maxSessions: 4,
 };
 
 let reducer = (state, action) =>
@@ -68,11 +69,6 @@ let reducer = (state, action) =>
     switch (p) {
     | Work => {...state, workTime: t}
     | Play => {...state, playTime: t}
-    }
-  | TogglePhase =>
-    switch (state.currentPhase) {
-    | Work => {...state, currentPhase: Play, seconds: state.playTime}
-    | Play => {...state, currentPhase: Work, seconds: state.workTime}
     }
   | SkipTimer => {
       ...state,

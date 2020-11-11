@@ -24,7 +24,9 @@
   </a>
 
   <img alt="GitHub" src="https://img.shields.io/github/license/tkovs/reason-pomodoro.svg">
-  <img src="https://travis-ci.org/tkovs/pomodoro.svg?branch=master" alt="Build Status" />
+  <a href="https://travis-ci.org/github/tkovs/pomodoro">
+    <img src="https://travis-ci.org/tkovs/pomodoro.svg?branch=master" alt="Build Status" />
+  </a>
 
   <br />
   <img alt="Build status" src="https://api.netlify.com/api/v1/badges/c3404df3-bf7b-45b7-bc01-62175b0423d1/deploy-status">

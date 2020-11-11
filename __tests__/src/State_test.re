@@ -261,56 +261,6 @@ describe("State.useReducer", () => {
     });
   });
 
-  describe("TogglePhase action", () => {
-    test("on Work phase, should toggle to Play phase", () => {
-      let initialState = {
-        currentPhase: Work,
-        isTicking: false,
-        maxSessions: 4,
-        playTime: 5,
-        seconds: 20,
-        session: 1,
-        workTime: 20,
-      };
-      let newState: State.state = {
-        ...initialState,
-        currentPhase: Play,
-        seconds: initialState.playTime,
-      };
-      let container = renderHook(() => useReducer(~initialState), ());
-
-      expect(container->result->current.state)
-      |> toEqual(initialState)
-      |> ignore;
-      act(() => container->result->current.dispatch(State.TogglePhase));
-      expect(container->result->current.state) |> toEqual(newState);
-    });
-
-    test("on Play phase, should toggle to Work phase", () => {
-      let initialState = {
-        currentPhase: Play,
-        isTicking: false,
-        maxSessions: 4,
-        playTime: 5,
-        seconds: 20,
-        session: 1,
-        workTime: 20,
-      };
-      let newState: State.state = {
-        ...initialState,
-        currentPhase: Work,
-        seconds: initialState.workTime,
-      };
-      let container = renderHook(() => useReducer(~initialState), ());
-
-      expect(container->result->current.state)
-      |> toEqual(initialState)
-      |> ignore;
-      act(() => container->result->current.dispatch(State.TogglePhase));
-      expect(container->result->current.state) |> toEqual(newState);
-    });
-  });
-
   describe("SkipTimer", () => {
     test("on Work phase, should should update state according", () => {
       let initialState = {

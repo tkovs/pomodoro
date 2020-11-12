@@ -26,6 +26,7 @@ describe("State.useReducer", () => {
         seconds: 20 * 60,
         session: 1,
         workTime: 20 * 60,
+        naturalLeap: false,
       };
 
       let container = renderHook(() => useReducer(~initialState), ());
@@ -34,7 +35,7 @@ describe("State.useReducer", () => {
     })
   });
 
-  describe("Play action", () => {
+  describe("Start action", () => {
     test("should active isTicking after dispatch a Play", () => {
       let initialState = {
         currentPhase: Work,
@@ -42,10 +43,15 @@ describe("State.useReducer", () => {
         maxSessions: 4,
         playTime: 5 * 60,
         seconds: 20 * 60,
-        session: 1,
+        session: 2,
         workTime: 20 * 60,
+        naturalLeap: true,
       };
-      let newState: State.state = {...initialState, isTicking: true};
+      let newState: State.state = {
+        ...initialState,
+        isTicking: true,
+        naturalLeap: false,
+      };
       let container = renderHook(() => useReducer(~initialState), ());
 
       expect(container->result->current.state)
@@ -66,6 +72,7 @@ describe("State.useReducer", () => {
         seconds: 20 * 60,
         session: 1,
         workTime: 20 * 60,
+        naturalLeap: false,
       };
       let newState: State.state = {...initialState, isTicking: false};
       let container = renderHook(() => useReducer(~initialState), ());
@@ -90,6 +97,7 @@ describe("State.useReducer", () => {
         seconds: 10,
         session: 1,
         workTime: 20 * 60,
+        naturalLeap: false,
       };
       let newState: State.state = {...initialState, seconds: 9};
       let container = renderHook(() => useReducer(~initialState), ());
@@ -112,6 +120,7 @@ describe("State.useReducer", () => {
         seconds: 10,
         session: 1,
         workTime: 20 * 60,
+        naturalLeap: false,
       };
       let container = renderHook(() => useReducer(~initialState), ());
 
@@ -133,12 +142,14 @@ describe("State.useReducer", () => {
           seconds: 1,
           session: 1,
           workTime: 20,
+          naturalLeap: false,
         };
         let newState: State.state = {
           ...initialState,
           isTicking: false,
           seconds: initialState.playTime,
           currentPhase: State.Play,
+          naturalLeap: true,
         };
         let container = renderHook(() => useReducer(~initialState), ());
 
@@ -161,6 +172,7 @@ describe("State.useReducer", () => {
           seconds: 1,
           session: 1,
           workTime: 20,
+          naturalLeap: false,
         };
         let newState: State.state = {
           ...initialState,
@@ -168,6 +180,7 @@ describe("State.useReducer", () => {
           seconds: initialState.workTime,
           currentPhase: State.Work,
           session: 2,
+          naturalLeap: true,
         };
         let container = renderHook(() => useReducer(~initialState), ());
 
@@ -190,6 +203,7 @@ describe("State.useReducer", () => {
           seconds: 1,
           session: 4,
           workTime: 20,
+          naturalLeap: false,
         };
         let newState: State.state = {
           ...initialState,
@@ -197,6 +211,7 @@ describe("State.useReducer", () => {
           seconds: initialState.workTime,
           currentPhase: State.Work,
           session: 1,
+          naturalLeap: true,
         };
         let container = renderHook(() => useReducer(~initialState), ());
 
@@ -220,6 +235,7 @@ describe("State.useReducer", () => {
         seconds: 17,
         session: 1,
         workTime: 20,
+        naturalLeap: false,
       };
       let newState: State.state = {
         ...initialState,
@@ -245,6 +261,7 @@ describe("State.useReducer", () => {
         seconds: 7,
         session: 1,
         workTime: 20,
+        naturalLeap: false,
       };
       let newState: State.state = {
         ...initialState,
@@ -271,12 +288,14 @@ describe("State.useReducer", () => {
         seconds: 20,
         session: 1,
         workTime: 20,
+        naturalLeap: true,
       };
       let newState: State.state = {
         ...initialState,
         currentPhase: Play,
         seconds: initialState.playTime,
         isTicking: false,
+        naturalLeap: false,
       };
       let container = renderHook(() => useReducer(~initialState), ());
 
@@ -298,6 +317,7 @@ describe("State.useReducer", () => {
         seconds: 20,
         session: 1,
         workTime: 20,
+        naturalLeap: true,
       };
       let newState: State.state = {
         ...initialState,
@@ -305,6 +325,7 @@ describe("State.useReducer", () => {
         seconds: initialState.workTime,
         isTicking: false,
         session: initialState.session + 1,
+        naturalLeap: false,
       };
       let container = renderHook(() => useReducer(~initialState), ());
 
@@ -326,6 +347,7 @@ describe("State.useReducer", () => {
         seconds: 20,
         session: 4,
         workTime: 20,
+        naturalLeap: true,
       };
       let newState: State.state = {
         ...initialState,
@@ -333,6 +355,7 @@ describe("State.useReducer", () => {
         seconds: initialState.workTime,
         isTicking: false,
         session: 1,
+        naturalLeap: false,
       };
       let container = renderHook(() => useReducer(~initialState), ());
 

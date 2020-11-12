@@ -6,9 +6,30 @@ let make = () => {
     React.useReducer(State.reducer, State.initialState);
 
   React.useEffect0(() => {
+    Notification.requestPermission() |> ignore;
+
     let timer = Js.Global.setInterval(() => dispatch(Tick), 1000);
     Some(() => Js.Global.clearInterval(timer));
   });
+
+  React.useEffect1(
+    () => {
+      state.naturalLeap
+        ? if (state.currentPhase === State.Work) {
+            Notification.notify(
+              "Fase concluida",
+              "Ative o proximo timer: hora de focar!",
+            );
+          } else {
+            Notification.notify(
+              "Fase concluida",
+              "Ative o proximo timer e descanse um pouco. Voce merece!",
+            );
+          }
+        : None
+    },
+    [|state.currentPhase|],
+  );
 
   let toggleIdentifier = "toggle-components";
   let isReseted =

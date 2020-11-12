@@ -2,8 +2,6 @@ type phase =
   | Work
   | Play;
 
-type last;
-
 type state = {
   currentPhase: phase,
   isTicking: bool,
@@ -12,6 +10,7 @@ type state = {
   session: int,
   maxSessions: int,
   workTime: int,
+  naturalLeap: bool,
 };
 
 type action =
@@ -30,11 +29,12 @@ let initialState = {
   workTime: 20 * 60,
   session: 1,
   maxSessions: 4,
+  naturalLeap: false,
 };
 
 let reducer = (state, action) =>
   switch (action) {
-  | Start => {...state, isTicking: true}
+  | Start => {...state, isTicking: true, naturalLeap: false}
   | Stop => {...state, isTicking: false}
   | Tick =>
     if (state.seconds > 1) {
@@ -50,6 +50,7 @@ let reducer = (state, action) =>
           currentPhase: Play,
           seconds: state.playTime,
           isTicking: false,
+          naturalLeap: true,
         }
       | Play => {
           ...state,
@@ -57,6 +58,7 @@ let reducer = (state, action) =>
           seconds: state.workTime,
           session: state.session == state.maxSessions ? 1 : state.session + 1,
           isTicking: false,
+          naturalLeap: true,
         }
       };
     }
@@ -72,6 +74,7 @@ let reducer = (state, action) =>
     }
   | SkipTimer => {
       ...state,
+      naturalLeap: false,
       currentPhase: state.currentPhase === Play ? Work : Play,
       seconds: state.currentPhase === Play ? state.workTime : state.playTime,
       isTicking: false,

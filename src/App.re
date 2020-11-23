@@ -6,8 +6,6 @@ let make = () => {
     React.useReducer(State.reducer, State.initialState);
 
   React.useEffect0(() => {
-    Notification.requestPermission() |> ignore;
-
     let timer = Js.Global.setInterval(() => dispatch(Tick), 1000);
     Some(() => Js.Global.clearInterval(timer));
   });
@@ -54,7 +52,10 @@ let make = () => {
           isTicking={state.isTicking}
           reset={_ => dispatch(Reset)}
           stop={_ => dispatch(Stop)}
-          start={_ => dispatch(Start)}
+          start={_ => {
+            Notification.requestPermission() |> ignore;
+            dispatch(Start);
+          }}
           skipTimer={_ => dispatch(SkipTimer)}
         />
       </div>

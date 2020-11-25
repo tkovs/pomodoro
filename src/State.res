@@ -1,6 +1,6 @@
 type phase =
   | Work
-  | Play;
+  | Play
 
 type state = {
   currentPhase: phase,
@@ -11,7 +11,7 @@ type state = {
   maxSessions: int,
   workTime: int,
   naturalLeap: bool,
-};
+}
 
 type action =
   | Start
@@ -19,7 +19,7 @@ type action =
   | Reset
   | Tick
   | SkipTimer
-  | SetTime(phase, int);
+  | SetTime(phase, int)
 
 let initialState = {
   isTicking: false,
@@ -30,21 +30,24 @@ let initialState = {
   session: 1,
   maxSessions: 4,
   naturalLeap: false,
-};
+}
 
 let reducer = (state, action) =>
-  switch (action) {
+  switch action {
   | Start => {...state, isTicking: true, naturalLeap: false}
   | Stop => {...state, isTicking: false}
   | Tick =>
-    if (state.seconds > 1) {
-      if (state.isTicking) {
-        {...state, seconds: state.seconds - 1};
+    if state.seconds > 1 {
+      if state.isTicking {
+        {
+          ...state,
+          seconds: state.seconds - 1,
+        }
       } else {
-        state;
-      };
+        state
+      }
     } else {
-      switch (state.currentPhase) {
+      switch state.currentPhase {
       | Work => {
           ...state,
           currentPhase: Play,
@@ -60,15 +63,15 @@ let reducer = (state, action) =>
           isTicking: false,
           naturalLeap: true,
         }
-      };
+      }
     }
   | Reset =>
-    switch (state.currentPhase) {
+    switch state.currentPhase {
     | Work => {...state, seconds: state.workTime, isTicking: false}
     | Play => {...state, seconds: state.playTime, isTicking: false}
     }
   | SetTime(p, t) =>
-    switch (p) {
+    switch p {
     | Work => {...state, workTime: t}
     | Play => {...state, playTime: t}
     }
@@ -78,11 +81,10 @@ let reducer = (state, action) =>
       currentPhase: state.currentPhase === Play ? Work : Play,
       seconds: state.currentPhase === Play ? state.workTime : state.playTime,
       isTicking: false,
-      session:
-        if (state.currentPhase === Play) {
-          state.session == state.maxSessions ? 1 : state.session + 1;
-        } else {
-          state.session;
-        },
+      session: if state.currentPhase === Play {
+        state.session == state.maxSessions ? 1 : state.session + 1
+      } else {
+        state.session
+      },
     }
-  };
+  }

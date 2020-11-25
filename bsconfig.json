@@ -10,6 +10,10 @@
     },
     {
       "type": "dev",
+      "dir": "__mocks__"
+    },
+    {
+      "type": "dev",
       "dir": "__tests__",
       "subdirs": true
     }

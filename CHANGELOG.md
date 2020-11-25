@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Alarm a sound when the timer ends
 ### Changed
 - Ask for notification permission on start timer
+### Fixed
+- Fix useEffect to notify user and play sound
 
 ## [0.11.0] - 2020-11-12
 ### Added

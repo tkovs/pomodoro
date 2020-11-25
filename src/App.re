@@ -12,19 +12,16 @@ let make = () => {
 
   React.useEffect1(
     () => {
-      state.naturalLeap
-        ? Some(
-            _ =>
-              Alarm.alarm(
-                ~title="Fase concluida",
-                ~message={
-                  state.currentPhase === State.Work
-                    ? "Ative o proximo timer: hora de focar!"
-                    : "Ative o timer e descanse um pouco. Voce merece.";
-                },
-              ),
-          )
-        : None
+      if (state.naturalLeap) {
+        let title = "Fase concluida";
+        let message =
+          state.currentPhase === State.Work
+            ? "Ative o proximo timer: hora de focar!"
+            : "Ative o timer e descanse um pouco. Voce merece.";
+
+        Alarm.alarm(~title, ~message);
+      };
+      None;
     },
     [|state.currentPhase|],
   );

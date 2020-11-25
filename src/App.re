@@ -6,24 +6,24 @@ let make = () => {
     React.useReducer(State.reducer, State.initialState);
 
   React.useEffect0(() => {
-    let timer = Js.Global.setInterval(() => dispatch(Tick), 1000);
+    let timer = Js.Global.setInterval(() => dispatch(Tick), 50);
     Some(() => Js.Global.clearInterval(timer));
   });
 
   React.useEffect1(
     () => {
       state.naturalLeap
-        ? if (state.currentPhase === State.Work) {
-            Notification.notify(
-              "Fase concluida",
-              "Ative o proximo timer: hora de focar!",
-            );
-          } else {
-            Notification.notify(
-              "Fase concluida",
-              "Ative o proximo timer e descanse um pouco. Voce merece!",
-            );
-          }
+        ? Some(
+            _ =>
+              Alarm.alarm(
+                ~title="Fase concluida",
+                ~message={
+                  state.currentPhase === State.Work
+                    ? "Ative o proximo timer: hora de focar!"
+                    : "Ative o timer e descanse um pouco. Voce merece.";
+                },
+              ),
+          )
         : None
     },
     [|state.currentPhase|],
@@ -53,7 +53,7 @@ let make = () => {
           reset={_ => dispatch(Reset)}
           stop={_ => dispatch(Stop)}
           start={_ => {
-            Notification.requestPermission() |> ignore;
+            Alarm.requestPermission() |> ignore;
             dispatch(Start);
           }}
           skipTimer={_ => dispatch(SkipTimer)}

@@ -21,6 +21,7 @@
   "author": "tkovs <joao.rodrigues@arapiraca.ufal.br> (https://github.com/tkovs)",
   "license": "MIT",
   "dependencies": {
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",

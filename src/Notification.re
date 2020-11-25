@@ -1,23 +1,11 @@
-let requestPermission = [%raw
-  {|
-  function() {
-    if (typeof Notification !== 'undefined') {
-      return Notification.requestPermission()
-    }
-  }
-  |}
-];
+type notification;
 
-let notify = [%raw
-  {|
-  function spawnNotification(title, body) {
-    var options = {
-      body,
-      icon: "/favicon.ico",
-    };
-    if (typeof Notification !== 'undefined') {
-      new Notification(title, options);
-    }
-  }
-  |}
-];
+type content = {
+  .
+  "body": string,
+  "icon": string,
+};
+
+[@bs.new] external make: (string, content) => notification = "Notification";
+[@bs.val] [@bs.scope "Notification"]
+external requestPermission: unit => unit = "requestPermission";

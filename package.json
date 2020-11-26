@@ -34,7 +34,7 @@
     "@glennsl/bs-jest": "^0.6.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "bs-jest-dom": "^4.1.1",
-    "bs-platform": "^8.3.1",
+    "bs-platform": "^8.3.3",
     "bs-react-testing-library": "^0.8.0",
     "gentype": "^3.38.0",
     "husky": "^5.0.0-beta.0",

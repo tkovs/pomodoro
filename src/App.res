@@ -5,7 +5,7 @@ let make = () => {
   let (state, dispatch) = React.useReducer(State.reducer, State.initialState)
 
   React.useEffect0(() => {
-    let timer = Js.Global.setInterval(() => dispatch(Tick), 50)
+    let timer = Js.Global.setInterval(() => dispatch(Tick), 1000)
     Some(() => Js.Global.clearInterval(timer))
   })
 

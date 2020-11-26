@@ -366,11 +366,7 @@ describe("Pomodoro application", () => {
       |> ignore
 
       result
-      |> getByTestId(
-        ~matcher=#Str(
-          "  ������\"|>��� N���� N��@��� N���� N��@@��@������",
-        ),
-      )
+      |> getByTestId(~matcher=#Str("current-phase"))
       |> expect
       |> toHaveTextContent(#Str("Break"))
       |> ignore

@@ -13,7 +13,7 @@ let make = (~phase, ~value, ~onChange, ~testId) =>
           onChange={e => {
             let newValue = (e->ReactEvent.Form.target)["value"]
 
-            if newValue > 0 && newValue < 9999 {
+            if newValue >= 0 && newValue <= 9999 {
               newValue * 60 |> onChange
             }
           }}

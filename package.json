@@ -9,7 +9,7 @@
     "test:watch": "jest --watchAll",
     "webpack": "webpack -w",
     "webpack:production": "NODE_ENV=production webpack",
-    "server": "webpack serve",
+    "server": "webpack-dev-server",
     "postinstall": "husky install"
   },
   "keywords": [
@@ -21,14 +21,14 @@
   "author": "tkovs <joao.rodrigues@arapiraca.ufal.br> (https://github.com/tkovs)",
   "license": "MIT",
   "dependencies": {
+    "@sentry/react": "^6.1.0",
+    "@sentry/tracing": "^6.1.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "reason-react": ">=0.7.1",
-    "reason-uikit": "^0.5.0",
-    "webpack": "^5.4.0",
-    "webpack-dev-server": "^3.11.0"
+    "reason-uikit": "^0.5.0"
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.6.0",
@@ -39,7 +39,9 @@
     "gentype": "^3.38.0",
     "husky": "^5.0.0-beta.0",
     "reason-hooks-testing-library": "^0.2.1",
-    "webpack-cli": "^4.2.0"
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
   },
   "jest": {
     "moduleNameMapper": {

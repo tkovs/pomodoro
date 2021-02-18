@@ -48,6 +48,7 @@ This project was developed with the following technologies:
 - [ReasonML](https://reasonml.github.io)
 - [Reason UIKit](https://github.com/tkovs/reason-uikit)
 - [Testing Library](https://testing-library.com)
+- [Sentry](https://sentry.io/)
 
 ## :information_source: How To Run
 
@@ -92,6 +93,7 @@ $ yarn test -u
 - [x] Add unit tests for session feature
 - [x] Add unit tests for settings feature
 - [x] Add unit tests for reducer
+- [x] Add error monitoring by using [Sentry](https://sentry.io/)
 - [ ] Add cypress tests and configure GH Actions for pull requests
 - [x] [Deploy](http://pomodoro.tkovs.com)
 - [ ] Migrate html to [Reason UIKit](https://github.com/tkovs/reason-uikit)

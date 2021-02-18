@@ -1,7 +1,5 @@
 type browserTracing
 
-type integrations = {browserTracing: unit => browserTracing}
-
 type config = {
   dsn: string,
   tracesSampleRate: float,

@@ -1,1 +1,1 @@
-@bs.val external dsn: string = "process.env.DSN_TOKEN"
+@bs.val external dsn: option<string> = "process.env.DSN_TOKEN"

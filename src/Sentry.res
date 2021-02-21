@@ -11,11 +11,16 @@ type config = {
 external makeTracing: unit => browserTracing = "BrowserTracing"
 
 let startSentry = () => {
-  let params = {
-    dsn: Environment.dsn,
-    tracesSampleRate: 1.0,
-    integrations: [makeTracing()],
-  }
+  switch Environment.dsn {
+  | None => ()
+  | Some(dsn) => {
+      let params = {
+        dsn: dsn,
+        tracesSampleRate: 1.0,
+        integrations: [makeTracing()],
+      }
 
-  init(params)
+      init(params)
+    }
+  }
 }

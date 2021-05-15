@@ -6,10 +6,17 @@ const outputDir = path.join(__dirname, "build/");
 const isProd = process.env.NODE_ENV === "production";
 
 module.exports = (env) => {
-  const token =
-    process.env.DSN_TOKEN === undefined
-      ? JSON.stringify(env.DSN_TOKEN)
-      : JSON.stringify(process.env.DSN_TOKEN);
+  const token = (() => {
+    if (process.env.DSN_TOKEN != null) {
+      return JSON.stringify(process.env.DSN_TOKEN);
+    }
+
+    if (env && env.DSN_TOKEN != null) {
+      return JSON.stringify(env.DSN_TOKEN);
+    }
+
+    return undefined;
+  })();
 
   return {
     entry: "./src/Index.bs.js",

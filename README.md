@@ -4,7 +4,7 @@
 </h1>
 
 <h4 align="center">
-  Pomodoro App with ReasonML and React.
+  Pomodoro App with Rescript and React.
 </h4>
 <p align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/tkovs/reason-pomodoro.svg">
@@ -45,7 +45,7 @@
 This project was developed with the following technologies:
 
 - [ReactJS](https://reactjs.org)
-- [ReasonML](https://reasonml.github.io)
+- [Rescript](https://rescript-lang.org/)
 - [Reason UIKit](https://github.com/tkovs/reason-uikit)
 - [Testing Library](https://testing-library.com)
 - [Sentry](https://sentry.io/)
